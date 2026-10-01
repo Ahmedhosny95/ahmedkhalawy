@@ -4,7 +4,7 @@ import {installGuard} from '../scripts/guard.mjs';
 export const VIEWPORTS = [{w: 375, h: 812}, {w: 390, h: 844}, {w: 768, h: 1024}, {w: 1440, h: 900}];
 export const COMPONENT_ROUTES = ['/', '/about', '/projects'];
 export const ALL_ROUTES = [...COMPONENT_ROUTES, '/contact'];
-export const SHOTS = 'evidence/cloud-002/screenshots';
+export const SHOTS = process.env.SHOTS_DIR || 'evidence/cloud-002/screenshots';
 type Fixtures = {blocked: string[]; newContext: (o?: BrowserContextOptions) => Promise<BrowserContext>};
 /** Default `context`/`page` are guarded; any extra context MUST come from `newContext` (also guarded, same list). */
 export const test = base.extend<Fixtures>({

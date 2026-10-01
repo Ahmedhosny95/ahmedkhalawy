@@ -30,4 +30,3 @@ Tests/titles/comments now say **reflow + high-DPI proxy (NOT real browser zoom)*
 ## Remaining gaps
 - Windows execution unverified; WebKit not run (blocked download, unchanged); real zoom, physical devices, screen readers, production shell/client routing, real Contact/CV delivery, field performance: all untested.
 - cloud-001 perf/test numbers remain as originally recorded; cloud-002 perf rerun (same profile; medians Home cold LCP 892 ms, repeat 588 ms; About 876/600) agrees but is a single new run on one machine.
-- Cost: UI-reported ~$2 used of $100 per the reviewer; not visible to this session.
