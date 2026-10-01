@@ -1,0 +1,434 @@
+{
+  "config": {
+    "configFile": "/home/user/ahmedkhalawy/playwright.config.ts",
+    "rootDir": "/home/user/ahmedkhalawy/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/cloud-002/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/user/ahmedkhalawy/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/user/ahmedkhalawy/tests",
+        "testIgnore": [
+          "/webkit-smoke/"
+        ],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 2,
+    "webServer": {
+      "command": "node scripts/serve.mjs",
+      "env": {
+        "PORT": "4173"
+      },
+      "url": "http://127.0.0.1:4173/",
+      "reuseExistingServer": false,
+      "timeout": 20000
+    }
+  },
+  "suites": [
+    {
+      "title": "guard.spec.ts",
+      "file": "guard.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "external host, external IP (v4/v6) and mutation requests are blocked, including in extra contexts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 508,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:26.122Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "744635278ff819b57657-71d950d59ec0cc5b93f8",
+          "file": "guard.spec.ts",
+          "line": 5,
+          "column": 1
+        },
+        {
+          "title": "no unguarded browser.newContext / launch in tests or perf",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4,
+                  "error": {
+                    "message": "Error: guard.spec.ts\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/browser\\.newContext|browser\\.newPage|chromium\\.launch/\u001b[39m\nReceived string:      \u001b[31m\"// Negative tests for the shared guard. Interception only: nothing is sent; targets are reserved/invalid addresses.\u001b[39m\n\u001b[31mimport {readFileSync, readdirSync} from 'node:fs';\u001b[39m\n\u001b[31mimport {test, expect} from './helpers';\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('external host, external IP (v4/v6) and mutation requests are blocked, including in extra contexts', async ({page, newContext, blocked}) => {\u001b[39m\n\u001b[31m  const extra = await (await newContext({javaScriptEnabled: true})).newPage();\u001b[39m\n\u001b[31m  for (const p of [page, extra]) {\u001b[39m\n\u001b[31m    await p.goto('/private/');\u001b[39m\n\u001b[31m    const results = await p.evaluate(async () => {\u001b[39m\n\u001b[31m      const t = (u: string, init?: RequestInit) => fetch(u, init).then(() => 'sent', () => 'blocked');\u001b[39m\n\u001b[31m      return [\u001b[39m\n\u001b[31m        await t('https://example.invalid/x'),               // external hostname (reserved .invalid TLD)\u001b[39m\n\u001b[31m        await t('http://203.0.113.9/x'),                    // external IPv4 literal (TEST-NET-3)\u001b[39m\n\u001b[31m        await t('http://[2001:db8::1]/x'),                  // external IPv6 literal (documentation prefix)\u001b[39m\n\u001b[31m        await t('/api/contact', {method: 'POST', body: 'x'}),   // local mutation\u001b[39m\n\u001b[31m        await t('/x', {method: 'PUT'}), await t('/x', {method: 'DELETE'}), await t('/x', {method: 'PATCH'}),\u001b[39m\n\u001b[31m      ];\u001b[39m\n\u001b[31m    });\u001b[39m\n\u001b[31m    expect(results).toEqual(Array(7).fill('blocked'));\u001b[39m\n\u001b[31m  }\u001b[39m\n\u001b[31m  expect(blocked.length).toBe(14);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('203.0.113.9'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('2001:db8'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.startsWith('POST'))).toBe(true);\u001b[39m\n\u001b[31m  blocked.length = 0; // expected here; the fixture's own \\\"nothing blocked\\\" assertion then passes\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('no unguarded \u001b[7mbrowser.newContext\u001b[27m / launch in tests or perf', async () => {\u001b[39m\n\u001b[31m  for (const f of readdirSync('tests').filter(f => f.endsWith('.ts') && f !== 'helpers.ts')) expect(readFileSync('tests/' + f, 'utf8'), f).not.toMatch(/browser\\\\.newContext|browser\\\\.newPage|chromium\\\\.launch/);\u001b[39m\n\u001b[31m  const perf = readFileSync('scripts/perf.mjs', 'utf8');\u001b[39m\n\u001b[31m  expect(perf).toContain('installGuard(ctx');\u001b[39m\n\u001b[31m  expect(perf).not.toMatch(/browser\\\\.newPage/);\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\"\u001b[39m",
+                    "stack": "Error: guard.spec.ts\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/browser\\.newContext|browser\\.newPage|chromium\\.launch/\u001b[39m\nReceived string:      \u001b[31m\"// Negative tests for the shared guard. Interception only: nothing is sent; targets are reserved/invalid addresses.\u001b[39m\n\u001b[31mimport {readFileSync, readdirSync} from 'node:fs';\u001b[39m\n\u001b[31mimport {test, expect} from './helpers';\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('external host, external IP (v4/v6) and mutation requests are blocked, including in extra contexts', async ({page, newContext, blocked}) => {\u001b[39m\n\u001b[31m  const extra = await (await newContext({javaScriptEnabled: true})).newPage();\u001b[39m\n\u001b[31m  for (const p of [page, extra]) {\u001b[39m\n\u001b[31m    await p.goto('/private/');\u001b[39m\n\u001b[31m    const results = await p.evaluate(async () => {\u001b[39m\n\u001b[31m      const t = (u: string, init?: RequestInit) => fetch(u, init).then(() => 'sent', () => 'blocked');\u001b[39m\n\u001b[31m      return [\u001b[39m\n\u001b[31m        await t('https://example.invalid/x'),               // external hostname (reserved .invalid TLD)\u001b[39m\n\u001b[31m        await t('http://203.0.113.9/x'),                    // external IPv4 literal (TEST-NET-3)\u001b[39m\n\u001b[31m        await t('http://[2001:db8::1]/x'),                  // external IPv6 literal (documentation prefix)\u001b[39m\n\u001b[31m        await t('/api/contact', {method: 'POST', body: 'x'}),   // local mutation\u001b[39m\n\u001b[31m        await t('/x', {method: 'PUT'}), await t('/x', {method: 'DELETE'}), await t('/x', {method: 'PATCH'}),\u001b[39m\n\u001b[31m      ];\u001b[39m\n\u001b[31m    });\u001b[39m\n\u001b[31m    expect(results).toEqual(Array(7).fill('blocked'));\u001b[39m\n\u001b[31m  }\u001b[39m\n\u001b[31m  expect(blocked.length).toBe(14);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('203.0.113.9'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('2001:db8'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.startsWith('POST'))).toBe(true);\u001b[39m\n\u001b[31m  blocked.length = 0; // expected here; the fixture's own \\\"nothing blocked\\\" assertion then passes\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('no unguarded \u001b[7mbrowser.newContext\u001b[27m / launch in tests or perf', async () => {\u001b[39m\n\u001b[31m  for (const f of readdirSync('tests').filter(f => f.endsWith('.ts') && f !== 'helpers.ts')) expect(readFileSync('tests/' + f, 'utf8'), f).not.toMatch(/browser\\\\.newContext|browser\\\\.newPage|chromium\\\\.launch/);\u001b[39m\n\u001b[31m  const perf = readFileSync('scripts/perf.mjs', 'utf8');\u001b[39m\n\u001b[31m  expect(perf).toContain('installGuard(ctx');\u001b[39m\n\u001b[31m  expect(perf).not.toMatch(/browser\\\\.newPage/);\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\"\u001b[39m\n    at /home/user/ahmedkhalawy/tests/guard.spec.ts:29:144",
+                    "location": {
+                      "file": "/home/user/ahmedkhalawy/tests/guard.spec.ts",
+                      "column": 144,
+                      "line": 29
+                    },
+                    "snippet": "  27 |\n  28 | test('no unguarded browser.newContext / launch in tests or perf', async () => {\n> 29 |   for (const f of readdirSync('tests').filter(f => f.endsWith('.ts') && f !== 'helpers.ts')) expect(readFileSync('tests/' + f, 'utf8'), f).not.toMatch(/browser\\.newContext|browser\\.newPage|chromium\\.launch/);\n     |                                                                                                                                                ^\n  30 |   const perf = readFileSync('scripts/perf.mjs', 'utf8');\n  31 |   expect(perf).toContain('installGuard(ctx');\n  32 |   expect(perf).not.toMatch(/browser\\.newPage/);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/user/ahmedkhalawy/tests/guard.spec.ts",
+                        "column": 144,
+                        "line": 29
+                      },
+                      "message": "Error: guard.spec.ts\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/browser\\.newContext|browser\\.newPage|chromium\\.launch/\u001b[39m\nReceived string:      \u001b[31m\"// Negative tests for the shared guard. Interception only: nothing is sent; targets are reserved/invalid addresses.\u001b[39m\n\u001b[31mimport {readFileSync, readdirSync} from 'node:fs';\u001b[39m\n\u001b[31mimport {test, expect} from './helpers';\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('external host, external IP (v4/v6) and mutation requests are blocked, including in extra contexts', async ({page, newContext, blocked}) => {\u001b[39m\n\u001b[31m  const extra = await (await newContext({javaScriptEnabled: true})).newPage();\u001b[39m\n\u001b[31m  for (const p of [page, extra]) {\u001b[39m\n\u001b[31m    await p.goto('/private/');\u001b[39m\n\u001b[31m    const results = await p.evaluate(async () => {\u001b[39m\n\u001b[31m      const t = (u: string, init?: RequestInit) => fetch(u, init).then(() => 'sent', () => 'blocked');\u001b[39m\n\u001b[31m      return [\u001b[39m\n\u001b[31m        await t('https://example.invalid/x'),               // external hostname (reserved .invalid TLD)\u001b[39m\n\u001b[31m        await t('http://203.0.113.9/x'),                    // external IPv4 literal (TEST-NET-3)\u001b[39m\n\u001b[31m        await t('http://[2001:db8::1]/x'),                  // external IPv6 literal (documentation prefix)\u001b[39m\n\u001b[31m        await t('/api/contact', {method: 'POST', body: 'x'}),   // local mutation\u001b[39m\n\u001b[31m        await t('/x', {method: 'PUT'}), await t('/x', {method: 'DELETE'}), await t('/x', {method: 'PATCH'}),\u001b[39m\n\u001b[31m      ];\u001b[39m\n\u001b[31m    });\u001b[39m\n\u001b[31m    expect(results).toEqual(Array(7).fill('blocked'));\u001b[39m\n\u001b[31m  }\u001b[39m\n\u001b[31m  expect(blocked.length).toBe(14);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('203.0.113.9'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('2001:db8'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.startsWith('POST'))).toBe(true);\u001b[39m\n\u001b[31m  blocked.length = 0; // expected here; the fixture's own \\\"nothing blocked\\\" assertion then passes\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('no unguarded \u001b[7mbrowser.newContext\u001b[27m / launch in tests or perf', async () => {\u001b[39m\n\u001b[31m  for (const f of readdirSync('tests').filter(f => f.endsWith('.ts') && f !== 'helpers.ts')) expect(readFileSync('tests/' + f, 'utf8'), f).not.toMatch(/browser\\\\.newContext|browser\\\\.newPage|chromium\\\\.launch/);\u001b[39m\n\u001b[31m  const perf = readFileSync('scripts/perf.mjs', 'utf8');\u001b[39m\n\u001b[31m  expect(perf).toContain('installGuard(ctx');\u001b[39m\n\u001b[31m  expect(perf).not.toMatch(/browser\\\\.newPage/);\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\"\u001b[39m\n\n  27 |\n  28 | test('no unguarded browser.newContext / launch in tests or perf', async () => {\n> 29 |   for (const f of readdirSync('tests').filter(f => f.endsWith('.ts') && f !== 'helpers.ts')) expect(readFileSync('tests/' + f, 'utf8'), f).not.toMatch(/browser\\.newContext|browser\\.newPage|chromium\\.launch/);\n     |                                                                                                                                                ^\n  30 |   const perf = readFileSync('scripts/perf.mjs', 'utf8');\n  31 |   expect(perf).toContain('installGuard(ctx');\n  32 |   expect(perf).not.toMatch(/browser\\.newPage/);\n    at /home/user/ahmedkhalawy/tests/guard.spec.ts:29:144"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:26.998Z",
+                  "annotations": [],
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/home/user/ahmedkhalawy/tests/guard.spec.ts",
+                    "column": 144,
+                    "line": 29
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "744635278ff819b57657-c58e9bba0a6024eb2d17",
+          "file": "guard.spec.ts",
+          "line": 28,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "handoff.spec.ts",
+      "file": "handoff.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "reordering and insertion: state maps by identity, not index",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 299,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:26.125Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b30bd866defb4d47d7e8-b092ba69cc3ced2d99bd",
+          "file": "handoff.spec.ts",
+          "line": 30,
+          "column": 1
+        },
+        {
+          "title": "closed state is preserved (client default open, user had it closed)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 166,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:26.785Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b30bd866defb4d47d7e8-e63737063ef4985286d4",
+          "file": "handoff.spec.ts",
+          "line": 38,
+          "column": 1
+        },
+        {
+          "title": "missing target: no guessing for details or focus",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 144,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:26.985Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b30bd866defb4d47d7e8-db6868a2640ce723a1e9",
+          "file": "handoff.spec.ts",
+          "line": 42,
+          "column": 1
+        },
+        {
+          "title": "ambiguous target (duplicate identity in client) is left untouched",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 139,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:27.139Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b30bd866defb4d47d7e8-f914f2a373487d7c723f",
+          "file": "handoff.spec.ts",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "focus follows the same link after insertion, and nav scopes disambiguate same-text links",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 142,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:27.296Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b30bd866defb4d47d7e8-48f0fd93008721e34dcb",
+          "file": "handoff.spec.ts",
+          "line": 53,
+          "column": 1
+        },
+        {
+          "title": "first-HTML fallback preserved: shell stays when client content is not ready",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 127,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:27.450Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "b30bd866defb4d47d7e8-e99d8e87083dbda72ba3",
+          "file": "handoff.spec.ts",
+          "line": 64,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "serve-cli.spec.ts",
+      "file": "serve-cli.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CLI starts its own loopback server, responds, and only that child is cleaned up",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 176,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:27.897Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d3f3498271a777486b1e-df0834759de902ba859d",
+          "file": "serve-cli.spec.ts",
+          "line": 5,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-01T14:20:24.956Z",
+    "duration": 3182.5809999999997,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

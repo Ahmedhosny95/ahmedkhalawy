@@ -1,11 +1,11 @@
 import {readFileSync, mkdirSync} from 'node:fs';
 import AxeBuilder from '@axe-core/playwright';
-import {test, expect, VIEWPORTS, COMPONENT_ROUTES, ALL_ROUTES, noHorizontalOverflow} from './helpers';
+import {test, expect, VIEWPORTS, COMPONENT_ROUTES, ALL_ROUTES, SHOTS, noHorizontalOverflow} from './helpers';
 
 const searchData = readFileSync('src/search-data.js', 'utf8');
 const expectedMeta = (JSON.parse(searchData.match(/routes=(\{.*?\});?\nconst/s)![1]) as Record<string, any>);
 const contract = JSON.parse(readFileSync('fixtures/public-contract.json', 'utf8'));
-mkdirSync('evidence/screenshots', {recursive: true});
+mkdirSync(SHOTS, {recursive: true});
 const slug = (r: string) => (r === '/' ? 'home' : r.slice(1));
 
 test.describe('layout at required viewports (components: Home/About/Work; static fixture: Contact)', () => {
@@ -16,21 +16,20 @@ test.describe('layout at required viewports (components: Home/About/Work; static
       await expect(page.locator('h1').first()).toBeVisible();
       const o = await noHorizontalOverflow(page);
       expect(o.sw, `scrollWidth ${o.sw} > clientWidth ${o.cw}`).toBeLessThanOrEqual(o.cw);
-      if (v.w === 375 || v.w === 1440) await page.screenshot({path: `evidence/screenshots/${slug(r)}-${v.w}x${v.h}.png`});
+      if (v.w === 375 || v.w === 1440) await page.screenshot({path: `${SHOTS}/${slug(r)}-${v.w}x${v.h}.png`});
     });
   }
 });
 
 test.describe('JavaScript modes', () => {
   for (const r of COMPONENT_ROUTES) {
-    test(`${r}: first HTML is complete with JS disabled`, async ({browser, baseURL}) => {
-      const ctx = await browser.newContext({javaScriptEnabled: false}); const page = await ctx.newPage();
+    test(`${r}: first HTML is complete with JS disabled`, async ({newContext, baseURL}) => {
+      const ctx = await newContext({javaScriptEnabled: false}); const page = await ctx.newPage();
       await page.goto(baseURL + r);
       await expect(page.locator('#public-prerender h1')).toBeVisible();
       await expect(page.locator('#public-prerender main#main-content')).toBeVisible();
       await expect(page.locator('#public-prerender a[href="#main-content"]')).toHaveCount(1);
-      await ctx.close();
-    });
+          });
     test(`${r}: raw first HTML contains content, title and canonical`, async ({request}) => {
       const html = await (await request.get(r)).text();
       expect(html).toContain('<h1');
@@ -64,13 +63,12 @@ test.describe('JavaScript modes', () => {
       await expect(page.locator('#root')).toBeHidden();
     });
   }
-  test('/contact static fixture is usable with JS disabled (it has no scripts anyway)', async ({browser, baseURL}) => {
-    const ctx = await browser.newContext({javaScriptEnabled: false}); const page = await ctx.newPage();
+  test('/contact static fixture is usable with JS disabled (it has no scripts anyway)', async ({newContext, baseURL}) => {
+    const ctx = await newContext({javaScriptEnabled: false}); const page = await ctx.newPage();
     await page.goto(baseURL + '/contact');
     await expect(page.locator('h1')).toContainText('Let’s talk');
     await expect(page.locator('a[href^="mailto:"]')).toHaveCount(1);
-    await ctx.close();
-  });
+      });
 });
 
 test.describe('metadata: title / canonical / schema / protected routes', () => {
@@ -191,15 +189,15 @@ test.describe('keyboard, focus, menu and disclosures', () => {
   });
 });
 
-test.describe('200% zoom / reflow', () => {
-  for (const [w, h, label] of [[640, 400, '1280x800 @200%'], [320, 256, 'WCAG reflow 320 CSS px']] as const) for (const r of ALL_ROUTES) {
-    test(`${r} ${label}: no horizontal scroll, content reachable`, async ({browser, baseURL}) => {
-      const ctx = await browser.newContext({viewport: {width: w, height: h}, deviceScaleFactor: 2}); const page = await ctx.newPage();
+// NOTE: this is a reflow / high-DPI PROXY (halved CSS viewport + deviceScaleFactor 2). It is NOT browser zoom; real zoom is untested.
+test.describe('reflow + high-DPI proxy (NOT real browser zoom)', () => {
+  for (const [w, h, label] of [[640, 400, 'halved 640x400 viewport @DPR2 (proxy for 200% zoom)'], [320, 256, 'WCAG reflow 320 CSS px']] as const) for (const r of ALL_ROUTES) {
+    test(`${r} ${label}: no horizontal scroll, content reachable`, async ({newContext, baseURL}) => {
+      const ctx = await newContext({viewport: {width: w, height: h}, deviceScaleFactor: 2}); const page = await ctx.newPage();
       await page.goto(baseURL + r); await expect(page.locator('h1').first()).toBeVisible();
       const o = await noHorizontalOverflow(page);
       expect(o.sw, `scrollWidth ${o.sw} > ${o.cw}`).toBeLessThanOrEqual(o.cw);
-      await ctx.close();
-    });
+          });
   }
 });
 
@@ -268,13 +266,12 @@ test.describe('CV download (local TEST FIXTURE, not production delivery)', () =>
 });
 
 test.describe('reduced motion', () => {
-  test('prefers-reduced-motion: no CSS animations/transitions running on Home', async ({browser, baseURL}) => {
-    const ctx = await browser.newContext({reducedMotion: 'reduce'}); const page = await ctx.newPage();
+  test('prefers-reduced-motion: no CSS animations/transitions running on Home', async ({newContext, baseURL}) => {
+    const ctx = await newContext({reducedMotion: 'reduce'}); const page = await ctx.newPage();
     await page.goto(baseURL + '/'); await expect(page.locator('#root h1')).toBeVisible();
     const n = await page.evaluate(() => document.getAnimations().length);
     expect(n).toBe(0);
-    await ctx.close();
-  });
+      });
 });
 
 test.describe('metadata cleanup logic (unit-level, source module)', () => {

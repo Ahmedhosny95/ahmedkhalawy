@@ -1,0 +1,4 @@
+/ cold {"lcpMs":892,"cls":0,"bytes":441467,"longTasks":3,"longTaskMs":303}
+/ repeat {"lcpMs":588,"cls":0,"bytes":298876,"longTasks":2,"longTaskMs":269}
+/about cold {"lcpMs":876,"cls":0,"bytes":483097,"longTasks":4,"longTaskMs":463}
+/about repeat {"lcpMs":600,"cls":0,"bytes":322526,"longTasks":4,"longTaskMs":466}

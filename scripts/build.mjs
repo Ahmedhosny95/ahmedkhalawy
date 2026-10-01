@@ -2,6 +2,7 @@
 import {build} from 'esbuild';
 import {cpSync, mkdirSync, rmSync, writeFileSync, readFileSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
+import {dirname} from 'node:path';
 const out = 'dist/public', tmp = 'dist/.ssr.mjs';
 rmSync('dist', {recursive: true, force: true});
 cpSync('public', out, {recursive: true});
@@ -9,11 +10,11 @@ const common = {bundle: true, minify: true, target: 'es2022', logLevel: 'warning
 await build({...common, entryPoints: {'public-entry': 'src/public-entry.tsx'}, outdir: out, format: 'esm', sourcemap: false});
 await build({...common, entryPoints: {'prerender-handoff': 'src/prerender-handoff.js'}, outdir: out, format: 'esm', external: ['./public-entry.js']});
 // Test-only module exposing metadata-runtime for the unit-level cleanup test.
-await build({...common, entryPoints: {'metadata-runtime.test-entry': 'src/metadata-runtime.js'}, outdir: out, format: 'esm'});
+await build({...common, entryPoints: {'metadata-runtime.test-entry': 'src/metadata-runtime.js', 'handoff.test-entry': 'src/prerender-handoff.js'}, outdir: out, format: 'esm', external: ['./public-entry.js']});
 await build({...common, minify: false, entryPoints: ['src/render-routes.tsx'], outfile: tmp, format: 'esm', platform: 'node', banner: {js: "import {createRequire} from 'module';const require=createRequire(import.meta.url);"}});
 const {renderRoute} = await import(pathToFileURL(tmp).href);
 for (const [route, file] of [['/', 'index.html'], ['/about', 'about/index.html'], ['/projects', 'projects/index.html']]) {
-  const dest = `${out}/${file}`; mkdirSync(dest.replace(/\/[^/]*$/, ''), {recursive: true}); writeFileSync(dest, renderRoute(route));
+  const dest = `${out}/${file}`; mkdirSync(dirname(dest), {recursive: true}); writeFileSync(dest, renderRoute(route));
 }
 rmSync(tmp);
 // Static Contact fixture: content/metadata contract only (old utility-class shell, no executable scripts).

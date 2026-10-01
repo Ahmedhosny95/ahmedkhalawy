@@ -1,0 +1,8 @@
+  ✘  1 [chromium] › tests/handoff.spec.ts:30:1 › reordering and insertion: state maps by identity, not index (202ms)
+  ✘  2 [chromium] › tests/handoff.spec.ts:38:1 › closed state is preserved (client default open, user had it closed) (216ms)
+  ✘  3 [chromium] › tests/handoff.spec.ts:42:1 › missing target: no guessing for details or focus (212ms)
+  ✘  4 [chromium] › tests/handoff.spec.ts:49:1 › ambiguous target (duplicate identity in client) is left untouched (221ms)
+  ✘  5 [chromium] › tests/handoff.spec.ts:53:1 › focus follows the same link after insertion, and nav scopes disambiguate same-text links (255ms)
+  ✓  6 [chromium] › tests/handoff.spec.ts:64:1 › first-HTML fallback preserved: shell stays when client content is not ready (181ms)
+  5 failed
+  1 passed (7.6s)

@@ -1,5 +1,7 @@
 # cloud-001 checkpoint: public-only harness
 
+> **Superseded in part by [cloud-002](cloud-002.md)** (review fixes: serve entry check, guard coverage, stable handoff restore, zoom relabel). The text and `evidence/` files below are the original cloud-001 results, kept unmodified as historical record; they were not re-run or relabelled. Notably, its "200% zoom" tests were only a reflow/high-DPI proxy.
+
 Base `88bca46`. Scope is the public seed only; no production shell, backend, real CV, or credentials. Emulation/adapter results here are **not** physical-phone, screen-reader, production-shell or field-performance acceptance, and no overall score is given.
 
 ## Commands

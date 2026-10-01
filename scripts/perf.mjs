@@ -2,13 +2,15 @@
 import {chromium} from '@playwright/test';
 import {existsSync, mkdirSync, writeFileSync} from 'node:fs';
 import {start} from './serve.mjs';
+import {BROWSER_ARGS, observeGuard} from './guard.mjs';
 const PORT = 4174, RUNS = 3;
 const PROFILE = {viewport: {width: 390, height: 844}, deviceScaleFactor: 2, isMobile: false,
   network: {offline: false, latency: 150, downloadThroughput: 1.6 * 1024 * 1024 / 8, uploadThroughput: 750 * 1024 / 8}, cpuSlowdown: 4};
+const blocked = [];
 const median = a => {const s = [...a].sort((x, y) => x - y); return s.length ? s[Math.floor(s.length / 2)] : null;};
 const server = await start(PORT);
 const exe = chromium.executablePath();
-const browser = await chromium.launch({executablePath: existsSync(exe) ? exe : undefined, args: ['--host-resolver-rules=MAP * ~NOTFOUND, EXCLUDE 127.0.0.1']});
+const browser = await chromium.launch({executablePath: existsSync(exe) ? exe : undefined, args: BROWSER_ARGS});
 const init = () => {
   window.__m = {lcp: 0, lcpEl: '', cls: 0, long: []};
   new PerformanceObserver(l => {for (const e of l.getEntries()) {window.__m.lcp = e.startTime; window.__m.lcpEl = (e.element?.tagName || '') + (e.element?.className ? '.' + String(e.element.className).split(' ')[0] : '');}}).observe({type: 'largest-contentful-paint', buffered: true});
@@ -43,11 +45,14 @@ for (const route of ['/', '/about']) {
   const cold = [], repeat = [];
   for (let i = 0; i < RUNS; i++) {
     const ctx = await browser.newContext({viewport: PROFILE.viewport, deviceScaleFactor: PROFILE.deviceScaleFactor, reducedMotion: 'no-preference'});
+    observeGuard(ctx, blocked); // passive: interception would disable the HTTP cache
     cold.push(await load(ctx, route, 'cold')); repeat.push(await load(ctx, route, 'repeat')); await ctx.close();
   }
   const sum = rs => ({median: {lcpMs: median(rs.map(r => r.lcpMs)), cls: median(rs.map(r => r.cls)), bytes: median(rs.map(r => r.bytes)), longTasks: median(rs.map(r => r.longTasks)), longTaskMs: median(rs.map(r => r.longTaskMs))}, runs: rs});
   out.results[route] = {cold: sum(cold), repeat: sum(repeat)};
 }
-mkdirSync('evidence', {recursive: true}); writeFileSync('evidence/perf-baseline.json', JSON.stringify(out, null, 2));
+out.blockedRequests = blocked;
+mkdirSync('evidence/cloud-002', {recursive: true}); writeFileSync(process.env.PERF_OUT || 'evidence/cloud-002/perf-baseline.json', JSON.stringify(out, null, 2));
 for (const [r, v] of Object.entries(out.results)) for (const k of ['cold', 'repeat']) console.log(r, k, JSON.stringify(v[k].median));
 await browser.close(); server.close();
+if (blocked.length) {console.error('Guard blocked requests:', blocked); process.exit(1);}
