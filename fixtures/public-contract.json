@@ -1,0 +1,41 @@
+{
+  "public_origin": "https://ahmedkhalawy.com",
+  "public_routes": [
+    "/",
+    "/about",
+    "/projects",
+    "/contact"
+  ],
+  "public_cv_link": {
+    "href": "/documents/ahmed-khalawy-cv.pdf?v=20261001-r7-polish",
+    "download_filename": "Ahmed-Khalawy-Public-CV.pdf",
+    "real_pdf_included": false,
+    "test_instruction": "Create a tiny clearly labelled TEST FIXTURE PDF or intercept the download locally; never fetch or infer actual CV delivery."
+  },
+  "protected_entry_fixture": {
+    "paths": [
+      "/private",
+      "/private/"
+    ],
+    "header": "X-Robots-Tag: noindex, nofollow, nosnippet",
+    "real_security_implementation_included": false
+  },
+  "rep_rules": [
+    "Disallow: /admin",
+    "Disallow: /private",
+    "Allow: /private$",
+    "Allow: /private/$",
+    "Disallow: /review",
+    "Disallow: /api"
+  ],
+  "rep_excluded_local_examples": [
+    "/private?guest=TEST_FIXTURE",
+    "/private/?token=TEST_FIXTURE",
+    "/private/portfolio",
+    "/review/",
+    "/admin/login",
+    "/api/bootstrap"
+  ],
+  "contract_only": true,
+  "live_requests_required": false
+}

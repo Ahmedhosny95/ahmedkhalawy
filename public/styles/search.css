@@ -1,0 +1,7 @@
+/* The actual public document remains visible until the matching React view exists. */
+html[data-public-prerender] #root{display:none}
+.search-mobile{position:relative}
+.search-mobile summary{cursor:pointer;list-style:none}
+.search-mobile nav{position:absolute;right:0;top:3.2rem;min-width:14rem;padding:1rem;background:#f5f3ee;border:1px solid #d8d4ca;border-radius:1rem}
+.search-mobile nav a{display:block;padding:.6rem;font-weight:700}
+.search-contact-note{margin-bottom:1rem;font-size:.85rem;line-height:1.5}

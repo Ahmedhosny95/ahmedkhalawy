@@ -1,0 +1,51 @@
+{
+  "css_source": "https://fonts.googleapis.com/css2?family=Manrope:wght@400..700&family=Lora:ital,wght@0,400..600;1,400..600&display=optional",
+  "fonts_and_licenses": [
+    {
+      "file": "manrope-latin-variable.woff2",
+      "family": "Manrope",
+      "style": "normal",
+      "weight_range": "400 700",
+      "subset": "Latin, as distributed by Google Fonts",
+      "source": "https://fonts.gstatic.com/s/manrope/v20/xn7gYHE41ni1AdIRggexSg.woff2",
+      "sha256": "a30ddcd349703aff7464c34bef3fffdff405ee50c113440d7c8693c02d210972",
+      "bytes": 24836,
+      "modified": false
+    },
+    {
+      "file": "lora-latin-variable.woff2",
+      "family": "Lora",
+      "style": "normal",
+      "weight_range": "400 600",
+      "subset": "Latin, as distributed by Google Fonts",
+      "source": "https://fonts.gstatic.com/s/lora/v37/0QIvMX1D_JOuMwr7Iw.woff2",
+      "sha256": "ddb8c66035104e233fc024669183aad3738b6daa16deee2ebb1241bd0f98ace1",
+      "bytes": 37788,
+      "modified": false
+    },
+    {
+      "file": "lora-latin-italic-variable.woff2",
+      "family": "Lora",
+      "style": "italic",
+      "weight_range": "400 600",
+      "subset": "Latin, as distributed by Google Fonts",
+      "source": "https://fonts.gstatic.com/s/lora/v37/0QIhMX1D_JOuMw_LIftL.woff2",
+      "sha256": "d824d807d4d832d12c87932d0b8ec1314dcfd502157a56dee6bb04cf8a3768ae",
+      "bytes": 40772,
+      "modified": false
+    },
+    {
+      "file": "Manrope-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/OFL.txt",
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b",
+      "bytes": 4387
+    },
+    {
+      "file": "Lora-OFL.txt",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/lora/OFL.txt",
+      "sha256": "1d9a970809ac804b582a6ce7f0ebc4e7fefcbfd7ff6299cad35ee656a21be716",
+      "bytes": 4423
+    }
+  ],
+  "no_runtime_remote_font_requests": true
+}
