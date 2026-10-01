@@ -10,7 +10,9 @@
     "grep": {},
     "grepInvert": null,
     "maxFailures": 0,
-    "metadata": {},
+    "metadata": {
+      "actualWorkers": 2
+    },
     "preserveOutput": "always",
     "reporter": [
       [
@@ -34,7 +36,9 @@
         "outputDir": "/home/user/ahmedkhalawy/test-results",
         "repeatEach": 1,
         "retries": 0,
-        "metadata": {},
+        "metadata": {
+          "actualWorkers": 2
+        },
         "id": "chromium",
         "name": "chromium",
         "testDir": "/home/user/ahmedkhalawy/tests",
@@ -64,92 +68,6 @@
   },
   "suites": [
     {
-      "title": "defects.spec.ts",
-      "file": "defects.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [
-        {
-          "title": "D1 contrast: Home/About small labels meet WCAG AA 4.5:1 (axe color-contrast)",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
-            }
-          ],
-          "id": "5cc8e42835e54f421100-fe13f56675818beb48dd",
-          "file": "defects.spec.ts",
-          "line": 5,
-          "column": 1
-        }
-      ],
-      "suites": [
-        {
-          "title": "D2 handoff preserves in-progress user state when React replaces the first HTML",
-          "file": "defects.spec.ts",
-          "line": 14,
-          "column": 6,
-          "specs": [
-            {
-              "title": "open mobile menu and disclosure survive handoff",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "5cc8e42835e54f421100-4d2ad1d08588137343e5",
-              "file": "defects.spec.ts",
-              "line": 15,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "D3 handoff preserves keyboard focus",
-          "file": "defects.spec.ts",
-          "line": 30,
-          "column": 6,
-          "specs": [
-            {
-              "title": "focused skip link/nav link is not lost to <body> when handoff replaces DOM",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "5cc8e42835e54f421100-dab0cacca4a2bdde9616",
-              "file": "defects.spec.ts",
-              "line": 31,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
       "title": "guard.spec.ts",
       "file": "guard.spec.ts",
       "column": 0,
@@ -166,38 +84,32 @@
               "expectedStatus": "passed",
               "projectId": "chromium",
               "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 508,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:26.122Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
             }
           ],
           "id": "744635278ff819b57657-71d950d59ec0cc5b93f8",
           "file": "guard.spec.ts",
-          "line": 7,
-          "column": 1
-        },
-        {
-          "title": "passive observer (used by perf) records external attempts; the request is aborted locally, never sent",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
-            }
-          ],
-          "id": "744635278ff819b57657-2fdb3b3c06b76095c50c",
-          "file": "guard.spec.ts",
-          "line": 30,
+          "line": 5,
           "column": 1
         },
         {
           "title": "no unguarded browser.newContext / launch in tests or perf",
-          "ok": true,
+          "ok": false,
           "tags": [],
           "tests": [
             {
@@ -206,13 +118,51 @@
               "expectedStatus": "passed",
               "projectId": "chromium",
               "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 4,
+                  "error": {
+                    "message": "Error: guard.spec.ts\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/browser\\.newContext|browser\\.newPage|chromium\\.launch/\u001b[39m\nReceived string:      \u001b[31m\"// Negative tests for the shared guard. Interception only: nothing is sent; targets are reserved/invalid addresses.\u001b[39m\n\u001b[31mimport {readFileSync, readdirSync} from 'node:fs';\u001b[39m\n\u001b[31mimport {test, expect} from './helpers';\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('external host, external IP (v4/v6) and mutation requests are blocked, including in extra contexts', async ({page, newContext, blocked}) => {\u001b[39m\n\u001b[31m  const extra = await (await newContext({javaScriptEnabled: true})).newPage();\u001b[39m\n\u001b[31m  for (const p of [page, extra]) {\u001b[39m\n\u001b[31m    await p.goto('/private/');\u001b[39m\n\u001b[31m    const results = await p.evaluate(async () => {\u001b[39m\n\u001b[31m      const t = (u: string, init?: RequestInit) => fetch(u, init).then(() => 'sent', () => 'blocked');\u001b[39m\n\u001b[31m      return [\u001b[39m\n\u001b[31m        await t('https://example.invalid/x'),               // external hostname (reserved .invalid TLD)\u001b[39m\n\u001b[31m        await t('http://203.0.113.9/x'),                    // external IPv4 literal (TEST-NET-3)\u001b[39m\n\u001b[31m        await t('http://[2001:db8::1]/x'),                  // external IPv6 literal (documentation prefix)\u001b[39m\n\u001b[31m        await t('/api/contact', {method: 'POST', body: 'x'}),   // local mutation\u001b[39m\n\u001b[31m        await t('/x', {method: 'PUT'}), await t('/x', {method: 'DELETE'}), await t('/x', {method: 'PATCH'}),\u001b[39m\n\u001b[31m      ];\u001b[39m\n\u001b[31m    });\u001b[39m\n\u001b[31m    expect(results).toEqual(Array(7).fill('blocked'));\u001b[39m\n\u001b[31m  }\u001b[39m\n\u001b[31m  expect(blocked.length).toBe(14);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('203.0.113.9'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('2001:db8'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.startsWith('POST'))).toBe(true);\u001b[39m\n\u001b[31m  blocked.length = 0; // expected here; the fixture's own \\\"nothing blocked\\\" assertion then passes\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('no unguarded \u001b[7mbrowser.newContext\u001b[27m / launch in tests or perf', async () => {\u001b[39m\n\u001b[31m  for (const f of readdirSync('tests').filter(f => f.endsWith('.ts') && f !== 'helpers.ts')) expect(readFileSync('tests/' + f, 'utf8'), f).not.toMatch(/browser\\\\.newContext|browser\\\\.newPage|chromium\\\\.launch/);\u001b[39m\n\u001b[31m  const perf = readFileSync('scripts/perf.mjs', 'utf8');\u001b[39m\n\u001b[31m  expect(perf).toContain('installGuard(ctx');\u001b[39m\n\u001b[31m  expect(perf).not.toMatch(/browser\\\\.newPage/);\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\"\u001b[39m",
+                    "stack": "Error: guard.spec.ts\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/browser\\.newContext|browser\\.newPage|chromium\\.launch/\u001b[39m\nReceived string:      \u001b[31m\"// Negative tests for the shared guard. Interception only: nothing is sent; targets are reserved/invalid addresses.\u001b[39m\n\u001b[31mimport {readFileSync, readdirSync} from 'node:fs';\u001b[39m\n\u001b[31mimport {test, expect} from './helpers';\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('external host, external IP (v4/v6) and mutation requests are blocked, including in extra contexts', async ({page, newContext, blocked}) => {\u001b[39m\n\u001b[31m  const extra = await (await newContext({javaScriptEnabled: true})).newPage();\u001b[39m\n\u001b[31m  for (const p of [page, extra]) {\u001b[39m\n\u001b[31m    await p.goto('/private/');\u001b[39m\n\u001b[31m    const results = await p.evaluate(async () => {\u001b[39m\n\u001b[31m      const t = (u: string, init?: RequestInit) => fetch(u, init).then(() => 'sent', () => 'blocked');\u001b[39m\n\u001b[31m      return [\u001b[39m\n\u001b[31m        await t('https://example.invalid/x'),               // external hostname (reserved .invalid TLD)\u001b[39m\n\u001b[31m        await t('http://203.0.113.9/x'),                    // external IPv4 literal (TEST-NET-3)\u001b[39m\n\u001b[31m        await t('http://[2001:db8::1]/x'),                  // external IPv6 literal (documentation prefix)\u001b[39m\n\u001b[31m        await t('/api/contact', {method: 'POST', body: 'x'}),   // local mutation\u001b[39m\n\u001b[31m        await t('/x', {method: 'PUT'}), await t('/x', {method: 'DELETE'}), await t('/x', {method: 'PATCH'}),\u001b[39m\n\u001b[31m      ];\u001b[39m\n\u001b[31m    });\u001b[39m\n\u001b[31m    expect(results).toEqual(Array(7).fill('blocked'));\u001b[39m\n\u001b[31m  }\u001b[39m\n\u001b[31m  expect(blocked.length).toBe(14);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('203.0.113.9'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('2001:db8'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.startsWith('POST'))).toBe(true);\u001b[39m\n\u001b[31m  blocked.length = 0; // expected here; the fixture's own \\\"nothing blocked\\\" assertion then passes\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('no unguarded \u001b[7mbrowser.newContext\u001b[27m / launch in tests or perf', async () => {\u001b[39m\n\u001b[31m  for (const f of readdirSync('tests').filter(f => f.endsWith('.ts') && f !== 'helpers.ts')) expect(readFileSync('tests/' + f, 'utf8'), f).not.toMatch(/browser\\\\.newContext|browser\\\\.newPage|chromium\\\\.launch/);\u001b[39m\n\u001b[31m  const perf = readFileSync('scripts/perf.mjs', 'utf8');\u001b[39m\n\u001b[31m  expect(perf).toContain('installGuard(ctx');\u001b[39m\n\u001b[31m  expect(perf).not.toMatch(/browser\\\\.newPage/);\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\"\u001b[39m\n    at /home/user/ahmedkhalawy/tests/guard.spec.ts:29:144",
+                    "location": {
+                      "file": "/home/user/ahmedkhalawy/tests/guard.spec.ts",
+                      "column": 144,
+                      "line": 29
+                    },
+                    "snippet": "  27 |\n  28 | test('no unguarded browser.newContext / launch in tests or perf', async () => {\n> 29 |   for (const f of readdirSync('tests').filter(f => f.endsWith('.ts') && f !== 'helpers.ts')) expect(readFileSync('tests/' + f, 'utf8'), f).not.toMatch(/browser\\.newContext|browser\\.newPage|chromium\\.launch/);\n     |                                                                                                                                                ^\n  30 |   const perf = readFileSync('scripts/perf.mjs', 'utf8');\n  31 |   expect(perf).toContain('installGuard(ctx');\n  32 |   expect(perf).not.toMatch(/browser\\.newPage/);"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/user/ahmedkhalawy/tests/guard.spec.ts",
+                        "column": 144,
+                        "line": 29
+                      },
+                      "message": "Error: guard.spec.ts\n\n\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoMatch\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected pattern: not \u001b[32m/browser\\.newContext|browser\\.newPage|chromium\\.launch/\u001b[39m\nReceived string:      \u001b[31m\"// Negative tests for the shared guard. Interception only: nothing is sent; targets are reserved/invalid addresses.\u001b[39m\n\u001b[31mimport {readFileSync, readdirSync} from 'node:fs';\u001b[39m\n\u001b[31mimport {test, expect} from './helpers';\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('external host, external IP (v4/v6) and mutation requests are blocked, including in extra contexts', async ({page, newContext, blocked}) => {\u001b[39m\n\u001b[31m  const extra = await (await newContext({javaScriptEnabled: true})).newPage();\u001b[39m\n\u001b[31m  for (const p of [page, extra]) {\u001b[39m\n\u001b[31m    await p.goto('/private/');\u001b[39m\n\u001b[31m    const results = await p.evaluate(async () => {\u001b[39m\n\u001b[31m      const t = (u: string, init?: RequestInit) => fetch(u, init).then(() => 'sent', () => 'blocked');\u001b[39m\n\u001b[31m      return [\u001b[39m\n\u001b[31m        await t('https://example.invalid/x'),               // external hostname (reserved .invalid TLD)\u001b[39m\n\u001b[31m        await t('http://203.0.113.9/x'),                    // external IPv4 literal (TEST-NET-3)\u001b[39m\n\u001b[31m        await t('http://[2001:db8::1]/x'),                  // external IPv6 literal (documentation prefix)\u001b[39m\n\u001b[31m        await t('/api/contact', {method: 'POST', body: 'x'}),   // local mutation\u001b[39m\n\u001b[31m        await t('/x', {method: 'PUT'}), await t('/x', {method: 'DELETE'}), await t('/x', {method: 'PATCH'}),\u001b[39m\n\u001b[31m      ];\u001b[39m\n\u001b[31m    });\u001b[39m\n\u001b[31m    expect(results).toEqual(Array(7).fill('blocked'));\u001b[39m\n\u001b[31m  }\u001b[39m\n\u001b[31m  expect(blocked.length).toBe(14);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('203.0.113.9'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.includes('2001:db8'))).toBe(true);\u001b[39m\n\u001b[31m  expect(blocked.some(b => b.startsWith('POST'))).toBe(true);\u001b[39m\n\u001b[31m  blocked.length = 0; // expected here; the fixture's own \\\"nothing blocked\\\" assertion then passes\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\u001b[39m\n\u001b[31mtest('no unguarded \u001b[7mbrowser.newContext\u001b[27m / launch in tests or perf', async () => {\u001b[39m\n\u001b[31m  for (const f of readdirSync('tests').filter(f => f.endsWith('.ts') && f !== 'helpers.ts')) expect(readFileSync('tests/' + f, 'utf8'), f).not.toMatch(/browser\\\\.newContext|browser\\\\.newPage|chromium\\\\.launch/);\u001b[39m\n\u001b[31m  const perf = readFileSync('scripts/perf.mjs', 'utf8');\u001b[39m\n\u001b[31m  expect(perf).toContain('installGuard(ctx');\u001b[39m\n\u001b[31m  expect(perf).not.toMatch(/browser\\\\.newPage/);\u001b[39m\n\u001b[31m});\u001b[39m\n\u001b[31m\"\u001b[39m\n\n  27 |\n  28 | test('no unguarded browser.newContext / launch in tests or perf', async () => {\n> 29 |   for (const f of readdirSync('tests').filter(f => f.endsWith('.ts') && f !== 'helpers.ts')) expect(readFileSync('tests/' + f, 'utf8'), f).not.toMatch(/browser\\.newContext|browser\\.newPage|chromium\\.launch/);\n     |                                                                                                                                                ^\n  30 |   const perf = readFileSync('scripts/perf.mjs', 'utf8');\n  31 |   expect(perf).toContain('installGuard(ctx');\n  32 |   expect(perf).not.toMatch(/browser\\.newPage/);\n    at /home/user/ahmedkhalawy/tests/guard.spec.ts:29:144"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:26.998Z",
+                  "annotations": [],
+                  "attachments": [],
+                  "errorLocation": {
+                    "file": "/home/user/ahmedkhalawy/tests/guard.spec.ts",
+                    "column": 144,
+                    "line": 29
+                  }
+                }
+              ],
+              "status": "unexpected"
             }
           ],
           "id": "744635278ff819b57657-c58e9bba0a6024eb2d17",
           "file": "guard.spec.ts",
-          "line": 39,
+          "line": 28,
           "column": 1
         }
       ]
@@ -234,8 +184,22 @@
               "expectedStatus": "passed",
               "projectId": "chromium",
               "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 299,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:26.125Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
             }
           ],
           "id": "b30bd866defb4d47d7e8-b092ba69cc3ced2d99bd",
@@ -254,8 +218,22 @@
               "expectedStatus": "passed",
               "projectId": "chromium",
               "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 166,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:26.785Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
             }
           ],
           "id": "b30bd866defb4d47d7e8-e63737063ef4985286d4",
@@ -274,8 +252,22 @@
               "expectedStatus": "passed",
               "projectId": "chromium",
               "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 144,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:26.985Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
             }
           ],
           "id": "b30bd866defb4d47d7e8-db6868a2640ce723a1e9",
@@ -294,8 +286,22 @@
               "expectedStatus": "passed",
               "projectId": "chromium",
               "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 139,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:27.139Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
             }
           ],
           "id": "b30bd866defb4d47d7e8-f914f2a373487d7c723f",
@@ -314,8 +320,22 @@
               "expectedStatus": "passed",
               "projectId": "chromium",
               "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 142,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:27.296Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
             }
           ],
           "id": "b30bd866defb4d47d7e8-48f0fd93008721e34dcb",
@@ -334,8 +354,22 @@
               "expectedStatus": "passed",
               "projectId": "chromium",
               "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 127,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:27.450Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
             }
           ],
           "id": "b30bd866defb4d47d7e8-e99d8e87083dbda72ba3",
@@ -346,1532 +380,11 @@
       ]
     },
     {
-      "title": "harness.spec.ts",
-      "file": "harness.spec.ts",
-      "column": 0,
-      "line": 0,
-      "specs": [],
-      "suites": [
-        {
-          "title": "layout at required viewports (components: Home/About/Work; static fixture: Contact)",
-          "file": "harness.spec.ts",
-          "line": 11,
-          "column": 6,
-          "specs": [
-            {
-              "title": "/ @375x812: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "375x812:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-06877bb0ca1ca6a69027",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/ @390x844: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "390x844:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-befa3a7133746f172e70",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/ @768x1024: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "768x1024:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-a05c8ff71c60f0d1dde9",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/ @1440x900: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "1440x900:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-8e4bede4337d964eeadf",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/about @375x812: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "375x812:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-9a3f869e53227f296bee",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/about @390x844: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "390x844:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-5b2f596fe2044755e96b",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/about @768x1024: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "768x1024:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-07ae2bf2fc600a73bb24",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/about @1440x900: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "1440x900:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-73e5a1dda25abf9102a4",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/projects @375x812: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "375x812:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-47e9733575b5eb193b62",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/projects @390x844: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "390x844:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-86848cd56e7ffd5e67c1",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/projects @768x1024: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "768x1024:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-bf886555f7ed6ac9f55a",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/projects @1440x900: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "1440x900:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-105e773f38e320cf9a81",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/contact @375x812: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "375x812:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-a6d95f5b1bc4b4beaceb",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/contact @390x844: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "390x844:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-254f406a23bc42444617",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/contact @768x1024: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "768x1024:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-75f5fd255f4b1ea1a428",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            },
-            {
-              "title": "/contact @1440x900: renders h1, no horizontal overflow",
-              "ok": true,
-              "tags": [
-                "1440x900:"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-6739a849259cddce1514",
-              "file": "harness.spec.ts",
-              "line": 13,
-              "column": 5
-            }
-          ]
-        },
-        {
-          "title": "JavaScript modes",
-          "file": "harness.spec.ts",
-          "line": 24,
-          "column": 6,
-          "specs": [
-            {
-              "title": "/: first HTML is complete with JS disabled",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-0bf2181c453646c39a0c",
-              "file": "harness.spec.ts",
-              "line": 26,
-              "column": 5
-            },
-            {
-              "title": "/: raw first HTML contains content, title and canonical",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-1de0c82db66fe9f38758",
-              "file": "harness.spec.ts",
-              "line": 33,
-              "column": 5
-            },
-            {
-              "title": "/: JS enabled hands off to React with same h1",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-db69881260911a393dea",
-              "file": "harness.spec.ts",
-              "line": 39,
-              "column": 5
-            },
-            {
-              "title": "/: delayed script keeps shell visible, then hands off",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-421b798ac4da07774750",
-              "file": "harness.spec.ts",
-              "line": 49,
-              "column": 5
-            },
-            {
-              "title": "/: failed script leaves complete usable shell",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-d28e9407f55554bdd85a",
-              "file": "harness.spec.ts",
-              "line": 56,
-              "column": 5
-            },
-            {
-              "title": "/about: first HTML is complete with JS disabled",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-ac986194c786353436d4",
-              "file": "harness.spec.ts",
-              "line": 26,
-              "column": 5
-            },
-            {
-              "title": "/about: raw first HTML contains content, title and canonical",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-77542e6bb814ca761545",
-              "file": "harness.spec.ts",
-              "line": 33,
-              "column": 5
-            },
-            {
-              "title": "/about: JS enabled hands off to React with same h1",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-dad21aa63e9e09425f44",
-              "file": "harness.spec.ts",
-              "line": 39,
-              "column": 5
-            },
-            {
-              "title": "/about: delayed script keeps shell visible, then hands off",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-94f55ed7229726837555",
-              "file": "harness.spec.ts",
-              "line": 49,
-              "column": 5
-            },
-            {
-              "title": "/about: failed script leaves complete usable shell",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-988b24823828a4b5de78",
-              "file": "harness.spec.ts",
-              "line": 56,
-              "column": 5
-            },
-            {
-              "title": "/projects: first HTML is complete with JS disabled",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-9cd38267907aff753844",
-              "file": "harness.spec.ts",
-              "line": 26,
-              "column": 5
-            },
-            {
-              "title": "/projects: raw first HTML contains content, title and canonical",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-372d5d6d4ab9b3fe230d",
-              "file": "harness.spec.ts",
-              "line": 33,
-              "column": 5
-            },
-            {
-              "title": "/projects: JS enabled hands off to React with same h1",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-68f7f04ebd7d47840e1c",
-              "file": "harness.spec.ts",
-              "line": 39,
-              "column": 5
-            },
-            {
-              "title": "/projects: delayed script keeps shell visible, then hands off",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-2f85aff5baee732eef2a",
-              "file": "harness.spec.ts",
-              "line": 49,
-              "column": 5
-            },
-            {
-              "title": "/projects: failed script leaves complete usable shell",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-4978d1da7698d68be3fc",
-              "file": "harness.spec.ts",
-              "line": 56,
-              "column": 5
-            },
-            {
-              "title": "/contact static fixture is usable with JS disabled (it has no scripts anyway)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-56e29c3823bbbf07a712",
-              "file": "harness.spec.ts",
-              "line": 66,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "metadata: title / canonical / schema / protected routes",
-          "file": "harness.spec.ts",
-          "line": 74,
-          "column": 6,
-          "specs": [
-            {
-              "title": "/ head matches approved metadata (after JS too)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-013f8311f06239a50ea1",
-              "file": "harness.spec.ts",
-              "line": 76,
-              "column": 5
-            },
-            {
-              "title": "/about head matches approved metadata (after JS too)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-5768d0ea4e1762fa4a16",
-              "file": "harness.spec.ts",
-              "line": 76,
-              "column": 5
-            },
-            {
-              "title": "/projects head matches approved metadata (after JS too)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-10f37c7087a38b912ec5",
-              "file": "harness.spec.ts",
-              "line": 76,
-              "column": 5
-            },
-            {
-              "title": "/contact head matches approved metadata (after JS too)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-1a41516b0c0b4497913b",
-              "file": "harness.spec.ts",
-              "line": 76,
-              "column": 5
-            },
-            {
-              "title": "/private and /private/ carry noindex header; query/deeper/other protected paths excluded",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-0455d91241bb08bbedfa",
-              "file": "harness.spec.ts",
-              "line": 96,
-              "column": 3
-            },
-            {
-              "title": "REP rules: terminal $ and longest-rule matching",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-1e4062b70a152378c33d",
-              "file": "harness.spec.ts",
-              "line": 104,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "navigation, back and cross-page anchors (native links)",
-          "file": "harness.spec.ts",
-          "line": 121,
-          "column": 6,
-          "specs": [
-            {
-              "title": "direct entry, nav clicks, back/forward keep content & title",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-3ee221abf2ae978ed544",
-              "file": "harness.spec.ts",
-              "line": 122,
-              "column": 3
-            },
-            {
-              "title": "cross-page anchor Home -> /about#credentials lands on the section",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-3a37c046301fb467a664",
-              "file": "harness.spec.ts",
-              "line": 131,
-              "column": 3
-            },
-            {
-              "title": "About in-page anchors #career and #recommendations scroll to target",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-c196daa324cc2373c702",
-              "file": "harness.spec.ts",
-              "line": 139,
-              "column": 3
-            },
-            {
-              "title": "Direct entry with hash scrolls after handoff (/about#recommendations)",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-bf73752ea488916f80ca",
-              "file": "harness.spec.ts",
-              "line": 147,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "keyboard, focus, menu and disclosures",
-          "file": "harness.spec.ts",
-          "line": 155,
-          "column": 6,
-          "specs": [
-            {
-              "title": "skip link is first tab stop and moves focus to main",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-2fac7376e5e0275e79f4",
-              "file": "harness.spec.ts",
-              "line": 156,
-              "column": 3
-            },
-            {
-              "title": "mobile menu opens by keyboard and links are reachable",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-0e6a7d4673652506f9e0",
-              "file": "harness.spec.ts",
-              "line": 165,
-              "column": 3
-            },
-            {
-              "title": "About disclosure (more recommendations) toggles with keyboard and shows 22 attributed quotes",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-c37263be2b846bdeecbd",
-              "file": "harness.spec.ts",
-              "line": 178,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "reflow + high-DPI proxy (NOT real browser zoom)",
-          "file": "harness.spec.ts",
-          "line": 193,
-          "column": 6,
-          "specs": [
-            {
-              "title": "/ halved 640x400 viewport @DPR2 (proxy for 200% zoom): no horizontal scroll, content reachable",
-              "ok": true,
-              "tags": [
-                "DPR2"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-8f4cc6e0eee60602bd0d",
-              "file": "harness.spec.ts",
-              "line": 195,
-              "column": 5
-            },
-            {
-              "title": "/about halved 640x400 viewport @DPR2 (proxy for 200% zoom): no horizontal scroll, content reachable",
-              "ok": true,
-              "tags": [
-                "DPR2"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-5d05852f134e290f3d30",
-              "file": "harness.spec.ts",
-              "line": 195,
-              "column": 5
-            },
-            {
-              "title": "/projects halved 640x400 viewport @DPR2 (proxy for 200% zoom): no horizontal scroll, content reachable",
-              "ok": true,
-              "tags": [
-                "DPR2"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-9a4e2e7289aa4cb97d5c",
-              "file": "harness.spec.ts",
-              "line": 195,
-              "column": 5
-            },
-            {
-              "title": "/contact halved 640x400 viewport @DPR2 (proxy for 200% zoom): no horizontal scroll, content reachable",
-              "ok": true,
-              "tags": [
-                "DPR2"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-2e0b2f0ebec41eb2e4f0",
-              "file": "harness.spec.ts",
-              "line": 195,
-              "column": 5
-            },
-            {
-              "title": "/ WCAG reflow 320 CSS px: no horizontal scroll, content reachable",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-d6253f6394e5adfa513a",
-              "file": "harness.spec.ts",
-              "line": 195,
-              "column": 5
-            },
-            {
-              "title": "/about WCAG reflow 320 CSS px: no horizontal scroll, content reachable",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-8c571f1af7c3436e7729",
-              "file": "harness.spec.ts",
-              "line": 195,
-              "column": 5
-            },
-            {
-              "title": "/projects WCAG reflow 320 CSS px: no horizontal scroll, content reachable",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-2aae875f63fcb4692b5e",
-              "file": "harness.spec.ts",
-              "line": 195,
-              "column": 5
-            },
-            {
-              "title": "/contact WCAG reflow 320 CSS px: no horizontal scroll, content reachable",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-bfd6a8813054060dd151",
-              "file": "harness.spec.ts",
-              "line": 195,
-              "column": 5
-            }
-          ]
-        },
-        {
-          "title": "automated accessibility (axe serious/critical)",
-          "file": "harness.spec.ts",
-          "line": 204,
-          "column": 6,
-          "specs": [
-            {
-              "title": "/ @390",
-              "ok": true,
-              "tags": [
-                "390"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-dffc1d22c7b1be951a4b",
-              "file": "harness.spec.ts",
-              "line": 206,
-              "column": 5
-            },
-            {
-              "title": "/ @1440",
-              "ok": true,
-              "tags": [
-                "1440"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-0ca1ea126fcee753cb99",
-              "file": "harness.spec.ts",
-              "line": 206,
-              "column": 5
-            },
-            {
-              "title": "/about @390",
-              "ok": true,
-              "tags": [
-                "390"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-782e5afc7ccd47386963",
-              "file": "harness.spec.ts",
-              "line": 206,
-              "column": 5
-            },
-            {
-              "title": "/about @1440",
-              "ok": true,
-              "tags": [
-                "1440"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-f2067ac78fc51d0bfc45",
-              "file": "harness.spec.ts",
-              "line": 206,
-              "column": 5
-            },
-            {
-              "title": "/projects @390",
-              "ok": true,
-              "tags": [
-                "390"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-484280ede41d598bd8ed",
-              "file": "harness.spec.ts",
-              "line": 206,
-              "column": 5
-            },
-            {
-              "title": "/projects @1440",
-              "ok": true,
-              "tags": [
-                "1440"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-bd1337a79e99b4619c60",
-              "file": "harness.spec.ts",
-              "line": 206,
-              "column": 5
-            },
-            {
-              "title": "/contact @390",
-              "ok": true,
-              "tags": [
-                "390"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-140ca9ef38e8fd440713",
-              "file": "harness.spec.ts",
-              "line": 206,
-              "column": 5
-            },
-            {
-              "title": "/contact @1440",
-              "ok": true,
-              "tags": [
-                "1440"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-af1ea452bf5201c72324",
-              "file": "harness.spec.ts",
-              "line": 206,
-              "column": 5
-            }
-          ]
-        },
-        {
-          "title": "factual guardrails (content preserved)",
-          "file": "harness.spec.ts",
-          "line": 219,
-          "column": 6,
-          "specs": [
-            {
-              "title": "Home/About/Work keep identity, dates, separation and training wording",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-94c2c3c2709c728568c9",
-              "file": "harness.spec.ts",
-              "line": 220,
-              "column": 3
-            },
-            {
-              "title": "Arabic recommendation excerpt is bidi-aware",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-85ea6bb210480ad7a126",
-              "file": "harness.spec.ts",
-              "line": 237,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "Contact contract (static fixture only, submissions inert)",
-          "file": "harness.spec.ts",
-          "line": 244,
-          "column": 6,
-          "specs": [
-            {
-              "title": "public details, form disabled/no action, no network on interaction",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-500413a47ab14b715676",
-              "file": "harness.spec.ts",
-              "line": 245,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "CV download (local TEST FIXTURE, not production delivery)",
-          "file": "harness.spec.ts",
-          "line": 256,
-          "column": 6,
-          "specs": [
-            {
-              "title": "link contract and fixture download",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-bb8c2bc0308a4affb693",
-              "file": "harness.spec.ts",
-              "line": 257,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "reduced motion",
-          "file": "harness.spec.ts",
-          "line": 268,
-          "column": 6,
-          "specs": [
-            {
-              "title": "prefers-reduced-motion: no CSS animations/transitions running on Home",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-390613eff3789073ad44",
-              "file": "harness.spec.ts",
-              "line": 269,
-              "column": 3
-            }
-          ]
-        },
-        {
-          "title": "metadata cleanup logic (unit-level, source module)",
-          "file": "harness.spec.ts",
-          "line": 277,
-          "column": 6,
-          "specs": [
-            {
-              "title": "syncSearchMetadata removes public metadata outside the allowlist and adds noindex for protected paths",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "2726d9e30a893a88bbed-445a95bb4d4ef3930789",
-              "file": "harness.spec.ts",
-              "line": 278,
-              "column": 3
-            }
-          ]
-        }
-      ]
-    },
-    {
       "title": "serve-cli.spec.ts",
       "file": "serve-cli.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [
-        {
-          "title": "CLI entry check works from a path containing spaces/#",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 60000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "chromium",
-              "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
-            }
-          ],
-          "id": "d3f3498271a777486b1e-c4d76a5ed1a76e6ca98c",
-          "file": "serve-cli.spec.ts",
-          "line": 9,
-          "column": 1
-        },
         {
           "title": "CLI starts its own loopback server, responds, and only that child is cleaned up",
           "ok": true,
@@ -1883,13 +396,27 @@
               "expectedStatus": "passed",
               "projectId": "chromium",
               "projectName": "chromium",
-              "results": [],
-              "status": "skipped"
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 176,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-01T14:20:27.897Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
             }
           ],
           "id": "d3f3498271a777486b1e-df0834759de902ba859d",
           "file": "serve-cli.spec.ts",
-          "line": 23,
+          "line": 5,
           "column": 1
         }
       ]
@@ -1897,11 +424,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-10-01T14:41:05.162Z",
-    "duration": 211.20399999999995,
-    "expected": 0,
-    "skipped": 81,
-    "unexpected": 0,
+    "startTime": "2026-10-01T14:20:24.956Z",
+    "duration": 3182.5809999999997,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 1,
     "flaky": 0
   }
 }

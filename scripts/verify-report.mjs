@@ -2,12 +2,16 @@
 // Usage: node scripts/verify-report.mjs <report.json> <console.txt>
 import {readFileSync} from 'node:fs';
 import {execFileSync} from 'node:child_process';
+import {createRequire} from 'node:module';
 const [report, consolePath] = process.argv.slice(2);
 const j = JSON.parse(readFileSync(report, 'utf8')), tests = [];
 const walk = (s, f) => {for (const sp of s.specs || []) for (const t of sp.tests) tests.push({file: sp.file || f, title: sp.title, project: t.projectName, status: t.status}); for (const c of s.suites || []) walk(c, c.file || f);};
 for (const s of j.suites) walk(s, s.file);
 const byFile = {}; for (const t of tests) {const b = (byFile[t.file] ||= {}); b[t.status] = (b[t.status] || 0) + 1;}
-const listed = execFileSync('npx', ['playwright', 'test', '--list'], {encoding: 'utf8'}).split('\n').filter(l => /^\s+\[/.test(l)).length;
+// Current Node + locally installed Playwright CLI (no npx/shell/network). Non-writing 'list' reporter (the config's JSON reporter would
+// overwrite a report file) and the chromium project only, so an optional WebKit install cannot change the count.
+const cli = createRequire(import.meta.url).resolve('@playwright/test/cli');
+const listed = execFileSync(process.execPath, [cli, 'test', '--list', '--project=chromium', '--reporter=list'], {encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe']}).split('\n').filter(l => /^\s+\[/.test(l)).length;
 const con = readFileSync(consolePath, 'utf8'), passedLine = con.match(/(\d+) passed/), failedLine = con.match(/(\d+) failed/);
 const out = {stats: j.stats, reportTests: tests.length, byFile, listedByCommand: listed, consolePassed: passedLine ? +passedLine[1] : 0, consoleFailed: failedLine ? +failedLine[1] : 0};
 out.agree = j.stats.expected === tests.length && tests.length === listed && out.consolePassed === j.stats.expected && j.stats.unexpected === 0 && j.stats.skipped === 0 && out.consoleFailed === 0;
