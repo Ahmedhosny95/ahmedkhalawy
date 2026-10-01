@@ -94,3 +94,7 @@
 .op-profile-answers article{padding-top:1.5rem;border-top:1px solid var(--op-line,#d8d4ca)}
 .op-profile-answers h3{font-size:1.1rem;margin:0 0 .65rem}
 .op-profile-answers p,.op-work-example{line-height:1.8}
+
+/* cloud-001 D1: WCAG AA text contrast (>=4.5:1) for small index/count labels; colour values only. */
+.op-system-row>span{color:#5a675f}
+.op-index{color:#74603a}
