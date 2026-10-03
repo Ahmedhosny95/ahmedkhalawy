@@ -9,9 +9,11 @@ clearly marked placeholders are new. Not the production site, not Ahmed's final 
 node experiments/cloud-006-design/scripts/build.mjs          # SSR first HTML for 4 routes + client bundle -> experiments/cloud-006-design/dist
 npx tsc -p experiments/cloud-006-design/tsconfig.json        # typecheck (strict)
 node experiments/cloud-006-design/scripts/serve.mjs          # http://127.0.0.1:4316 (loopback only; reuses scripts/serve.mjs)
-cd experiments/cloud-006-design && npx playwright test -c playwright.config.ts   # 42 browser tests + evidence
+cd experiments/cloud-006-design && npx playwright test -c playwright.config.ts   # browser tests + evidence
 ```
-`PW_JSON` overrides the reporter path (default `evidence/prototype-results.json`). The root harness, its config and its
+Each run writes everything (reporter JSON, timelines, screenshots, PDF, video) to a NEW `evidence/cloud-006b-<UTC run id>/`
+(override with `C006_EVIDENCE=evidence/cloud-006b-<name>`); earlier evidence is never overwritten or merged.
+Original cloud-006 evidence (`evidence/prototype-*`) and `HANDOFF.ar.md` are kept as history; corrections: `HANDOFF-006b.ar.md`. The root harness, its config and its
 historical JSON reports are untouched; do **not** run the root suite to regenerate this evidence.
 
 ## Structure

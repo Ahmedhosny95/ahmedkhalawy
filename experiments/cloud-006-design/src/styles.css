@@ -61,25 +61,31 @@ p{margin:0 0 1em;text-wrap:pretty} p:last-child{margin-bottom:0}
 .nav-desktop a:hover{color:var(--ink)}
 .nav-desktop a:hover::after,.nav-desktop a[aria-current=page]::after{transform:scaleX(1)}
 .nav-desktop a[aria-current=page]{color:var(--ink)}
-.menu-btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border:1px solid var(--rule);background:var(--white);color:var(--ink);font:700 .95rem var(--sans);border-radius:999px;cursor:pointer;transition:background-color var(--dur-1) var(--ease-out),border-color var(--dur-1)}
+.menu{position:static}
+.menu-btn{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 14px;border:1px solid var(--rule);background:var(--white);color:var(--ink);font:700 .95rem var(--sans);border-radius:999px;cursor:pointer;list-style:none;transition:background-color var(--dur-1) var(--ease-out),border-color var(--dur-1)}
+.menu-btn::-webkit-details-marker{display:none}
 .menu-btn:hover{border-color:var(--ink)}
+.menu .when-open,.menu[open] .when-closed{display:none}.menu[open] .when-open{display:inline}
 .menu-icon{position:relative;width:16px;height:10px}
 .menu-icon i{position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:2px;transition:transform var(--dur-2) var(--ease-in-out),top var(--dur-2) var(--ease-in-out)}
 .menu-icon i:first-child{top:0}.menu-icon i:last-child{top:8px}
-.menu-btn[aria-expanded=true] .menu-icon i:first-child{top:4px;transform:rotate(45deg)}
-.menu-btn[aria-expanded=true] .menu-icon i:last-child{top:4px;transform:rotate(-45deg)}
+.menu[open] .menu-icon i:first-child{top:4px;transform:rotate(45deg)}
+.menu[open] .menu-icon i:last-child{top:4px;transform:rotate(-45deg)}
+/* keep the closed content rendered for the length of the exit transition (Chromium); elsewhere it hides instantly */
+.menu::details-content{transition:content-visibility var(--dur-2) allow-discrete}
 .menu-panel{position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--rule);box-shadow:0 18px 30px -24px rgba(16,48,42,.55);
-  opacity:0;transform:translateY(-10px);visibility:hidden;pointer-events:none;
-  transition:opacity var(--dur-2) var(--ease-exit),transform var(--dur-2) var(--ease-exit),visibility 0s linear var(--dur-2)}
-.menu-panel[data-open]{opacity:1;transform:none;visibility:visible;pointer-events:auto;transition:opacity var(--dur-2) var(--ease-out),transform var(--dur-3) var(--ease-out),visibility 0s}
+  opacity:0;transform:translateY(-10px);transition:opacity var(--dur-2) var(--ease-exit),transform var(--dur-2) var(--ease-exit)}
+.menu[open] .menu-panel{opacity:1;transform:none;transition:opacity var(--dur-2) var(--ease-out),transform var(--dur-3) var(--ease-out)}
+@starting-style{.menu[open] .menu-panel{opacity:0;transform:translateY(-10px)}}
 .menu-panel nav{display:flex;flex-direction:column;padding-block:8px 20px}
 .menu-panel a{display:flex;justify-content:space-between;align-items:center;min-height:56px;border-bottom:1px solid var(--rule);font:500 1.45rem var(--serif);text-decoration:none;
   opacity:0;transform:translateY(-6px);transition:opacity var(--dur-2) var(--ease-out),transform var(--dur-2) var(--ease-out),color var(--dur-1)}
-.menu-panel[data-open] a{opacity:1;transform:none;transition-delay:calc(var(--i) * var(--stagger))}
+.menu[open] .menu-panel a{opacity:1;transform:none;transition-delay:calc(var(--i) * var(--stagger))}
+@starting-style{.menu[open] .menu-panel a{opacity:0;transform:translateY(-6px)}}
 .menu-panel a[aria-current=page]{color:var(--accent)}
 .menu-panel a span{font-family:var(--sans);font-size:1rem;transition:transform var(--dur-1) var(--ease-out)}
 .menu-panel a:hover span{transform:translateX(4px)}
-@media (min-width:860px){.nav-desktop{display:flex}.menu-btn,.menu-panel{display:none}}
+@media (min-width:860px){.nav-desktop{display:flex}.menu{display:none}}
 
 /* ---------- buttons & links ---------- */
 .actions{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px 14px;margin-top:30px}

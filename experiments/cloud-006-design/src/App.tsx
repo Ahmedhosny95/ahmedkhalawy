@@ -1,11 +1,12 @@
 import * as React from 'react';
 import {Link, Router, useNav, normalize} from './router';
 import {AboutPage, ContactPage, HomePage, ProjectsPage} from './pages';
-import {identity, seo} from './content';
+import {identity} from './content';
+import {applyMeta, metaFor} from './meta';
 
 const PAGES: Record<string, () => React.ReactElement> = {'/': HomePage, '/about': AboutPage, '/projects': ProjectsPage, '/contact': ContactPage};
 const NAV = [['/projects', 'Work'], ['/about', 'Profile'], ['/contact', 'Contact']] as const;
-export const titleFor = (path: string) => (seo as Record<string, {title: string}>)[path]?.title ?? identity.name;
+export const titleFor = (path: string) => metaFor(path).title;
 
 export function App({initialPath}: {initialPath: string}) {
   return <Router initialPath={initialPath}><Shell/></Router>;
@@ -14,12 +15,12 @@ export function App({initialPath}: {initialPath: string}) {
 function Shell() {
   const {nav} = useNav();
   const Page = PAGES[nav.path] ?? HomePage;
-  React.useEffect(() => {document.title = titleFor(nav.path);}, [nav.path]);
-  useReveals(nav.key);
+  React.useEffect(() => {if (nav.kind !== 'initial') applyMeta(nav.path);}, [nav.path, nav.kind]);
+  useReveals(nav.routeKey);
   return <>
     <a className="skip" href="#main">Skip to content</a>
     <SiteHeader/>
-    <main id="main" tabIndex={-1} key={nav.key} className={nav.kind === 'initial' ? 'route' : 'route route-enter'}>
+    <main id="main" tabIndex={-1} key={nav.routeKey} className={nav.kind === 'initial' ? 'route' : 'route route-enter'}>
       <Page/>
     </main>
     <footer className="footer">
@@ -35,26 +36,34 @@ function Shell() {
 
 function SiteHeader() {
   const {nav} = useNav();
-  const [open, setOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
-  const btn = React.useRef<HTMLButtonElement>(null);
-  const panel = React.useRef<HTMLDivElement>(null);
-  React.useEffect(() => setOpen(false), [nav.key]);
+  const menu = React.useRef<HTMLDetailsElement>(null);
+  // While the exit fade plays the links stay rendered, so they are made inert immediately on close.
+  const close = (refocus = false) => {const d = menu.current; if (d?.open) {d.querySelector('.menu-panel')?.setAttribute('inert', ''); d.open = false; if (refocus) d.querySelector('summary')?.focus();}};
+  React.useEffect(() => close(), [nav.routeKey]);
   React.useEffect(() => {
     const on = () => setScrolled(window.scrollY > 8);
     on(); addEventListener('scroll', on, {passive: true});
-    return () => removeEventListener('scroll', on);
-  }, []);
-  React.useEffect(() => {
-    if (!open) return;
-    panel.current?.querySelector<HTMLElement>('a')?.focus();
-    const onKey = (e: KeyboardEvent) => {if (e.key === 'Escape') {setOpen(false); btn.current?.focus();}};
-    const onDown = (e: PointerEvent) => {if (!panel.current?.contains(e.target as Node) && !btn.current?.contains(e.target as Node)) setOpen(false);};
+    const onKey = (e: KeyboardEvent) => {if (e.key === 'Escape' && menu.current?.open) {e.preventDefault(); close(true);}};
+    const onDown = (e: PointerEvent) => {if (menu.current?.open && !menu.current.contains(e.target as Node)) close();};
     addEventListener('keydown', onKey); addEventListener('pointerdown', onDown);
-    return () => {removeEventListener('keydown', onKey); removeEventListener('pointerdown', onDown);};
-  }, [open]);
+    return () => {removeEventListener('scroll', on); removeEventListener('keydown', onKey); removeEventListener('pointerdown', onDown);};
+  }, []);
   const current = (p: string) => (normalize(nav.path) === p ? 'page' : undefined);
-  return <header className="site-header" data-scrolled={scrolled || undefined} data-menu={open || undefined}>
+  // Mobile menu is a native <details>: it opens and its links navigate with no app JavaScript at all.
+  // After hydration React adds focus management, Escape, outside-click and close-on-navigate.
+  React.useEffect(() => {
+    const d = menu.current!;
+    const onToggle = () => {
+      const panel = d.querySelector('.menu-panel')!;
+      if (!d.open) {panel.setAttribute('inert', ''); return;}
+      panel.removeAttribute('inert');
+      requestAnimationFrame(() => d.querySelector<HTMLElement>('.menu-panel a')?.focus({preventScroll: true}));
+    };
+    d.addEventListener('toggle', onToggle);
+    return () => d.removeEventListener('toggle', onToggle);
+  }, []);
+  return <header className="site-header" data-scrolled={scrolled || undefined}>
     <div className="wrap header-inner">
       <Link to="/" className="brand" aria-label="Ahmed Khalawy — home">
         <img src="/mark.svg" alt="" width={36} height={36}/><span><b>Ahmed Khalawy</b><small>Senior QA/QC Engineer</small></span>
@@ -62,14 +71,16 @@ function SiteHeader() {
       <nav aria-label="Main navigation" className="nav-desktop">
         {NAV.map(([to, label]) => <Link key={to} to={to} aria-current={current(to)}>{label}</Link>)}
       </nav>
-      <button ref={btn} type="button" className="menu-btn" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(o => !o)}>
-        <span className="menu-icon" aria-hidden="true"><i/><i/></span><span>{open ? 'Close' : 'Menu'}</span>
-      </button>
-    </div>
-    <div id="mobile-menu" ref={panel} className="menu-panel" data-open={open || undefined} inert={!open || undefined}>
-      <nav aria-label="Mobile navigation" className="wrap">
-        {NAV.map(([to, label], i) => <Link key={to} to={to} aria-current={current(to)} style={{'--i': i} as React.CSSProperties}>{label}<span aria-hidden="true">→</span></Link>)}
-      </nav>
+      <details ref={menu} className="menu">
+        <summary className="menu-btn">
+          <span className="menu-icon" aria-hidden="true"><i/><i/></span><span className="menu-label"><span className="when-closed">Menu</span><span className="when-open">Close</span></span>
+        </summary>
+        <div id="mobile-menu" className="menu-panel">
+          <nav aria-label="Mobile navigation" className="wrap">
+            {NAV.map(([to, label], i) => <Link key={to} to={to} aria-current={current(to)} style={{'--i': i} as React.CSSProperties}>{label}<span aria-hidden="true">→</span></Link>)}
+          </nav>
+        </div>
+      </details>
     </div>
   </header>;
 }

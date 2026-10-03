@@ -1,0 +1,142 @@
+
+Running 6 tests using 1 worker
+
+  ✘  1 [chromium] › tests/prototype.spec.ts:267:1 › CLOUD006B CV specimen prints to exactly 4 A4 pages without overflow; min type ≥ 9 pt (233ms)
+  ✘  2 [chromium] › tests/prototype.spec.ts:313:3 › CLOUD006B history › same-route hash: open disclosure, Answers, Back, Forward — state, scroll and focus kept (1.3s)
+  ✘  3 [chromium] › tests/prototype.spec.ts:341:3 › CLOUD006B history › cross-route Back/Forward restores open disclosure and scroll (two-sided) (1.3s)
+  ✘  4 [chromium] › tests/prototype.spec.ts:359:1 › CLOUD006B head: title, description, canonical and JSON-LD follow client navigation, Back and Forward (single tags) (352ms)
+  ✘  5 [chromium] › tests/prototype.spec.ts:385:3 › CLOUD006B mobile navigation without app JavaScript › JS disabled in the browser context (390): native menu opens and a link navigates (5.2s)
+  ✘  6 [chromium] › tests/prototype.spec.ts:399:3 › CLOUD006B mobile navigation without app JavaScript › app bundle blocked, JS enabled (390): native menu still works by keyboard (1.0m)
+
+
+  1) [chromium] › tests/prototype.spec.ts:267:1 › CLOUD006B CV specimen prints to exactly 4 A4 pages without overflow; min type ≥ 9 pt 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBeGreaterThanOrEqual[2m([22m[32mexpected[39m[2m)[22m
+
+    Expected: >= [32m9[39m
+    Received:    [31m8[39m
+
+      275 |   }));
+      276 |   expect(pages.length).toBe(4);
+    > 277 |   for (const p of pages) {expect(p.overflow).toBe(false); expect(p.clearancePx).toBeGreaterThan(0); expect(p.minFontPt).toBeGreaterThanOrEqual(9);}
+          |                                                                                                                         ^
+      278 |   const pdf = `${EV}/cv-specimen.pdf`;
+      279 |   await page.pdf({path: pdf, format: 'A4', printBackground: true, preferCSSPageSize: true});
+      280 |   const info = execFileSync('pdfinfo', [pdf], {encoding: 'utf8'});
+        at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:277:121
+
+    Error Context: ../../test-results/cloud-006/prototype-CLOUD006B-CV-spe-48835-ut-overflow-min-type-≥-9-pt-chromium/error-context.md
+
+  2) [chromium] › tests/prototype.spec.ts:313:3 › CLOUD006B history › same-route hash: open disclosure, Answers, Back, Forward — state, scroll and focus kept 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      330 |     const back = await page.evaluate(() => ({y: scrollY, open: (document.querySelector('details.disclosure-quotes') as HTMLDetailsElement).open,
+      331 |       focus: document.activeElement?.getAttribute('href') ?? document.activeElement?.tagName, sameMain: !!(document.querySelector('main') as any).__same}));
+    > 332 |     expect(back.open).toBe(true); expect(back.sameMain).toBe(true); expect(back.focus).toBe('#answers');
+          |                       ^
+      333 |     expect(Math.abs(back.y - y0)).toBeLessThanOrEqual(TOL);
+      334 |     await page.goForward(); await expect(page).toHaveURL(/\/about#answers$/); await page.waitForTimeout(250);
+      335 |     const fwd = await page.evaluate(() => ({y: scrollY, open: (document.querySelector('details.disclosure-quotes') as HTMLDetailsElement).open, focus: document.activeElement?.id}));
+        at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:332:23
+
+    Error Context: ../../test-results/cloud-006/prototype-CLOUD006B-histor-8c525-state-scroll-and-focus-kept-chromium/error-context.md
+
+  3) [chromium] › tests/prototype.spec.ts:341:3 › CLOUD006B history › cross-route Back/Forward restores open disclosure and scroll (two-sided) 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32mtrue[39m
+    Received: [31mfalse[39m
+
+      350 |     await page.goBack(); await expect(page).toHaveURL(/\/about$/); await page.waitForTimeout(250);
+      351 |     const b = await page.evaluate(() => ({y: scrollY, open: (document.querySelector('details.disclosure-quotes') as HTMLDetailsElement).open, focus: document.activeElement?.tagName}));
+    > 352 |     expect(b.open).toBe(true); expect(Math.abs(b.y - y0)).toBeLessThanOrEqual(TOL); expect(b.focus).not.toBe('BODY');
+          |                    ^
+      353 |     await page.goForward(); await expect(page).toHaveURL(/\/projects$/); await page.waitForTimeout(250);
+      354 |     expect(Math.abs(await page.evaluate(() => scrollY) - 700)).toBeLessThanOrEqual(TOL);
+      355 |     timelines['CLOUD006B cross-route history'] = {y0, back: b};
+        at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:352:20
+
+    Error Context: ../../test-results/cloud-006/prototype-CLOUD006B-histor-5912e-osure-and-scroll-two-sided--chromium/error-context.md
+
+  4) [chromium] › tests/prototype.spec.ts:359:1 › CLOUD006B head: title, description, canonical and JSON-LD follow client navigation, Back and Forward (single tags) 
+
+    Error: [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  - 1[39m
+    [31m+ Received  + 1[39m
+
+    [2m  Array [[22m
+    [32m-   "Ahmed Khalawy (احمد خلوي): current Yuksel Saudia role, previous Eibla experience, quality leadership, skills and precisely stated ISO 9001 auditor training.",[39m
+    [31m+   "Ahmed Khalawy (احمد خلوي), Senior QA/QC Engineer in Riyadh, works across quality assurance, quality control and quality management in manufacturing and construction.",[39m
+    [2m  ][22m
+
+      370 |     const h = await head();
+      371 |     expect(h.title).toBe(seo[r].title);
+    > 372 |     expect(h.desc).toEqual([seo[r].description]); expect(h.canon).toEqual([seo[r].url]);
+          |                    ^
+      373 |     expect(h.ld).toEqual([seedSchema(r)]); expect(h.robots).toEqual(['noindex, nofollow']);
+      374 |   };
+      375 |   await expectRoute('/');
+        at expectRoute (/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:372:20)
+        at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:376:121
+
+    Error Context: ../../test-results/cloud-006/prototype-CLOUD006B-head-t-c0137-ck-and-Forward-single-tags--chromium/error-context.md
+
+  5) [chromium] › tests/prototype.spec.ts:385:3 › CLOUD006B mobile navigation without app JavaScript › JS disabled in the browser context (390): native menu opens and a link navigates 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).not.[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+
+    Locator: locator('details.menu')
+    Expected: not [32m""[39m
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "not toHaveAttribute" with timeout 5000ms[22m
+    [2m  - waiting for locator('details.menu')[22m
+
+
+      388 |     await page.goto(baseURL + '/');
+      389 |     const menu = page.locator('details.menu');
+    > 390 |     await expect(menu).not.toHaveAttribute('open', '');
+          |                            ^
+      391 |     await menu.locator('summary').click();
+      392 |     await expect(menu).toHaveAttribute('open', '');
+      393 |     await expect(page.locator('#mobile-menu a[href="/about"]')).toBeVisible();
+        at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:390:28
+
+    Error Context: ../../test-results/cloud-006/prototype-CLOUD006B-mobile-e602a--opens-and-a-link-navigates-chromium/error-context.md
+
+  6) [chromium] › tests/prototype.spec.ts:399:3 › CLOUD006B mobile navigation without app JavaScript › app bundle blocked, JS enabled (390): native menu still works by keyboard 
+
+    [31mTest timeout of 60000ms exceeded.[39m
+
+    Error: locator.focus: Test timeout of 60000ms exceeded.
+    Call log:
+    [2m  - waiting for locator('details.menu').locator('summary')[22m
+
+
+      403 |     expect(await page.evaluate(() => document.documentElement.dataset.hydrated)).toBeUndefined();
+      404 |     const menu = page.locator('details.menu');
+    > 405 |     await menu.locator('summary').focus(); await page.keyboard.press('Enter');
+          |                                   ^
+      406 |     await expect(menu).toHaveAttribute('open', '');
+      407 |     await page.keyboard.press('Tab');
+      408 |     await expect(page.locator(':focus')).toHaveAttribute('href', '/projects');
+        at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:405:35
+
+    Error Context: ../../test-results/cloud-006/prototype-CLOUD006B-mobile-9a5a2-enu-still-works-by-keyboard-chromium/error-context.md
+
+  6 failed
+    [chromium] › tests/prototype.spec.ts:267:1 › CLOUD006B CV specimen prints to exactly 4 A4 pages without overflow; min type ≥ 9 pt 
+    [chromium] › tests/prototype.spec.ts:313:3 › CLOUD006B history › same-route hash: open disclosure, Answers, Back, Forward — state, scroll and focus kept 
+    [chromium] › tests/prototype.spec.ts:341:3 › CLOUD006B history › cross-route Back/Forward restores open disclosure and scroll (two-sided) 
+    [chromium] › tests/prototype.spec.ts:359:1 › CLOUD006B head: title, description, canonical and JSON-LD follow client navigation, Back and Forward (single tags) 
+    [chromium] › tests/prototype.spec.ts:385:3 › CLOUD006B mobile navigation without app JavaScript › JS disabled in the browser context (390): native menu opens and a link navigates 
+    [chromium] › tests/prototype.spec.ts:399:3 › CLOUD006B mobile navigation without app JavaScript › app bundle blocked, JS enabled (390): native menu still works by keyboard 
+exit=1
