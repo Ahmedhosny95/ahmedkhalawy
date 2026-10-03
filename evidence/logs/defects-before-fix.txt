@@ -1,0 +1,5 @@
+  ✘  1 [chromium] › tests/defects.spec.ts:5:1 › D1 contrast: Home/About small labels meet WCAG AA 4.5:1 (axe color-contrast) (1.0s)
+  ✘  2 [chromium] › tests/defects.spec.ts:15:3 › D2 handoff preserves in-progress user state when React replaces the first HTML › open mobile menu and disclosure survive handoff (5.6s)
+  ✘  3 [chromium] › tests/defects.spec.ts:31:3 › D3 handoff preserves keyboard focus › focused skip link/nav link is not lost to <body> when handoff replaces DOM (459ms)
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+  3 failed

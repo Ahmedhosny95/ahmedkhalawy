@@ -1,0 +1,4 @@
+{
+ "run": "evidence/cloud-006b-20261003T103117/before-defects",
+ "note": "requestAnimationFrame samples from the local headless Chromium (ms since sampling start). rAF cadence is not a measure of physical display smoothness."
+}

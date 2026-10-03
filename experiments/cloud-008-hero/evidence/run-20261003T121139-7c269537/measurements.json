@@ -1,0 +1,89 @@
+{
+ "run": "evidence/run-20261003T121139-7c269537",
+ "note": "Local headless Chromium only. rAF samples are not physical display smoothness; no Safari/real-phone/screen-reader testing.",
+ "tab-order": [
+  "Skip to content",
+  "Ahmed Khalawy",
+  "Work",
+  "Career",
+  "Contact",
+  "See the work ↓",
+  "CV demo · file not includeddem",
+  "Scroll to career",
+  "Motion: on",
+  "LinkedIn profile ↗"
+ ],
+ "layout-375": {
+  "sw": 375,
+  "cw": 375,
+  "h1L": 16,
+  "h1R": 359,
+  "ctaBottom": 787.625,
+  "ctaRight": 182,
+  "imgReady": true,
+  "cls": 0
+ },
+ "layout-390": {
+  "sw": 390,
+  "cw": 390,
+  "h1L": 16,
+  "h1R": 374,
+  "ctaBottom": 746.296875,
+  "ctaRight": 182,
+  "imgReady": true,
+  "cls": 0
+ },
+ "layout-1440": {
+  "sw": 1440,
+  "cw": 1440,
+  "h1L": 56,
+  "h1R": 808,
+  "ctaBottom": 661.015625,
+  "ctaRight": 230,
+  "imgReady": true,
+  "cls": 0
+ },
+ "delayed-hydration": {
+  "before": {
+   "entrance": 6,
+   "heroH": 900,
+   "toggleHidden": true
+  },
+  "after": {
+   "entranceTotalSinceLoad": 6,
+   "sameAnimationObjects": true,
+   "removed": 0,
+   "h1Kept": true,
+   "imgKept": true,
+   "heroH": 900,
+   "cls": 0,
+   "toggleHidden": false
+  }
+ },
+ "pulse-samples": {
+  "frames": 80,
+  "first": {
+   "t": -7,
+   "offset": 993.25,
+   "opacity": 0.529913
+  },
+  "last": {
+   "t": 1509,
+   "offset": 885.22,
+   "opacity": 0.944745
+  }
+ },
+ "transfer-bytes": {
+  "total": 362668,
+  "sizes": {
+   "/": 12004,
+   "/assets/ahmed-portraits-20261001/ahmed-hero.webp": 37706,
+   "/mark.svg": 377,
+   "/hero.ba7195e94e.css": 12428,
+   "/fonts/manrope-latin-variable.woff2": 24836,
+   "/fonts/lora-latin-variable.woff2": 37788,
+   "/app.js": 237529
+  },
+  "note": "Body bytes from the local server (no compression/CDN). Not a performance score."
+ }
+}

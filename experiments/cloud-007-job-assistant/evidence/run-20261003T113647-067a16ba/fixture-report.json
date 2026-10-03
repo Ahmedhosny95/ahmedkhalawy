@@ -1,0 +1,1686 @@
+{
+ "note": "Synthetic fixtures only; not real postings or production results.",
+ "rows": [
+  {
+   "id": "jd01",
+   "title": "QA/QC Engineer — sheet-metal manufacturing",
+   "lang": "en",
+   "requirements": 9,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 524,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 4,
+    "evidencedRequired": 3,
+    "evidenced": 6,
+    "related": 2,
+    "discussion": 1
+   },
+   "route": [
+    "c1",
+    "c2",
+    "c6",
+    "c3"
+   ],
+   "levels": [
+    {
+     "text": "Perform incoming, in-process and final inspection",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Maintain the inspection and test plan (ITP) for each product family",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Lead 8D investigations for customer complaints",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "5+ years of quality experience in manufacturing",
+     "category": "experience",
+     "status": "required",
+     "level": "related",
+     "note": "years-not-shown"
+    },
+    {
+     "text": "Bachelor's degree in Mechanical Engineering",
+     "category": "education",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Hands-on SPC and gauge R&R",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Fluent English",
+     "category": "language",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Six Sigma Green Belt certification",
+     "category": "certification",
+     "status": "preferred",
+     "level": "related",
+     "note": "credential-not-shown"
+    },
+    {
+     "text": "Experience with SAP QM",
+     "category": "skill",
+     "status": "preferred",
+     "level": "discussion",
+     "note": "none"
+    }
+   ]
+  },
+  {
+   "id": "jd02",
+   "title": "Quality Manager — appliances",
+   "lang": "en",
+   "requirements": 6,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 328,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 3,
+    "evidencedRequired": 1,
+    "evidenced": 4,
+    "related": 1,
+    "discussion": 1
+   },
+   "route": [
+    "c6",
+    "c4",
+    "c8"
+   ],
+   "levels": [
+    {
+     "text": "Own the QMS and ISO 9001 surveillance audits",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Lead a team of 40 inspectors and 3 supervisors",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Drive 5S and kaizen on the shop floor",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Minimum 10 years in quality, 3 years in a management role",
+     "category": "experience",
+     "status": "required",
+     "level": "discussion",
+     "note": "years-not-shown"
+    },
+    {
+     "text": "Certified lead auditor (CQI/IRCA registered) is mandatory",
+     "category": "certification",
+     "status": "required",
+     "level": "related",
+     "note": "credential-not-shown"
+    },
+    {
+     "text": "Arabic and English",
+     "category": "language",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  },
+  {
+   "id": "jd03",
+   "title": "Supplier Quality Engineer",
+   "lang": "en",
+   "requirements": 6,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 315,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 2,
+    "evidencedRequired": 0,
+    "evidenced": 2,
+    "related": 1,
+    "discussion": 3
+   },
+   "route": [
+    "c4",
+    "c3"
+   ],
+   "levels": [
+    {
+     "text": "qualify new suppliers through on-site audits",
+     "category": "location",
+     "status": "unspecified",
+     "level": "discussion",
+     "note": "attribute-not-shown"
+    },
+    {
+     "text": "manage supplier corrective action (8D) and PPAP files",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "analyse supplier KPIs in Power BI",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "4-6 years as an SQE in automotive or appliances",
+     "category": "experience",
+     "status": "required",
+     "level": "related",
+     "note": "years-not-shown"
+    },
+    {
+     "text": "Knowledge of IATF 16949 is a plus",
+     "category": "other",
+     "status": "preferred",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Willingness to travel 30%",
+     "category": "location",
+     "status": "required",
+     "level": "discussion",
+     "note": "attribute-not-shown"
+    }
+   ]
+  },
+  {
+   "id": "jd04",
+   "title": "Arabic QC inspector role",
+   "lang": "ar",
+   "requirements": 6,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 278,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 3,
+    "evidencedRequired": 2,
+    "evidenced": 3,
+    "related": 2,
+    "discussion": 1
+   },
+   "route": [
+    "c1",
+    "c6",
+    "c5"
+   ],
+   "levels": [
+    {
+     "text": "فحص المواد الواردة وفق خطط الفحص والاختبار",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "إجراء اختبار العزل والاستمرارية للوحات الكهربائية قبل الشحن",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "draft",
+     "note": "only-draft"
+    },
+    {
+     "text": "خبرة لا تقل عن ٣ سنوات في الفحص",
+     "category": "experience",
+     "status": "required",
+     "level": "related",
+     "note": "years-not-shown"
+    },
+    {
+     "text": "بكالوريوس هندسة كهربائية",
+     "category": "education",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "يفضل الحصول على شهادة مفتش معتمد",
+     "category": "certification",
+     "status": "preferred",
+     "level": "discussion",
+     "note": "credential-not-shown"
+    },
+    {
+     "text": "إجادة اللغة الإنجليزية",
+     "category": "language",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  },
+  {
+   "id": "jd05",
+   "title": "Negation-heavy junior role",
+   "lang": "en",
+   "requirements": 2,
+   "excluded": [
+    "negated",
+    "negated",
+    "negated"
+   ],
+   "truncated": {
+    "chars": false,
+    "originalLength": 214,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 2,
+    "evidencedRequired": 1,
+    "evidenced": 1,
+    "related": 0,
+    "discussion": 1
+   },
+   "route": [
+    "c1",
+    "c2",
+    "c7"
+   ],
+   "levels": [
+    {
+     "text": "Basic Excel for inspection reports",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Must be able to read drawings",
+     "category": "skill",
+     "status": "required",
+     "level": "discussion",
+     "note": "none"
+    }
+   ]
+  },
+  {
+   "id": "jd06",
+   "title": "Prompt-injection inside a posting",
+   "lang": "en",
+   "requirements": 2,
+   "excluded": [
+    "instruction-like"
+   ],
+   "truncated": {
+    "chars": false,
+    "originalLength": 255,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 2,
+    "evidencedRequired": 1,
+    "evidenced": 1,
+    "related": 0,
+    "discussion": 1
+   },
+   "route": [
+    "c3"
+   ],
+   "levels": [
+    {
+     "text": "3 years in process quality",
+     "category": "experience",
+     "status": "required",
+     "level": "discussion",
+     "note": "years-not-shown"
+    },
+    {
+     "text": "Root-cause analysis (5 Whys, fishbone)",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  },
+  {
+   "id": "jd07",
+   "title": "Electrical panel QC (IEC 61439)",
+   "lang": "en",
+   "requirements": 6,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 255,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 2,
+    "evidencedRequired": 0,
+    "evidenced": 0,
+    "related": 3,
+    "discussion": 3
+   },
+   "route": [
+    "c5",
+    "c1"
+   ],
+   "levels": [
+    {
+     "text": "final inspection of LV switchgear to IEC 61439",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "draft",
+     "note": "only-draft"
+    },
+    {
+     "text": "witness routine tests (insulation, hipot)",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "draft",
+     "note": "only-draft"
+    },
+    {
+     "text": "maintain test records",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "3+ years with LV panels",
+     "category": "experience",
+     "status": "required",
+     "level": "related",
+     "note": "years-not-shown"
+    },
+    {
+     "text": "NEBOSH IGC is an advantage",
+     "category": "certification",
+     "status": "preferred",
+     "level": "discussion",
+     "note": "credential-not-shown"
+    },
+    {
+     "text": "Valid Saudi driving licence",
+     "category": "location",
+     "status": "required",
+     "level": "discussion",
+     "note": "attribute-not-shown"
+    }
+   ]
+  },
+  {
+   "id": "jd08",
+   "title": "Data/BI quality analyst",
+   "lang": "en",
+   "requirements": 4,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 185,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 1,
+    "evidencedRequired": 0,
+    "evidenced": 2,
+    "related": 1,
+    "discussion": 1
+   },
+   "route": [
+    "c2",
+    "c7"
+   ],
+   "levels": [
+    {
+     "text": "Build Power BI dashboards for quality KPIs",
+     "category": "skill",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Automate Excel reports and clean ERP data",
+     "category": "skill",
+     "status": "unspecified",
+     "level": "related",
+     "note": "only-related"
+    },
+    {
+     "text": "SQL and Python are required",
+     "category": "other",
+     "status": "required",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Statistical analysis with Minitab preferred",
+     "category": "skill",
+     "status": "preferred",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  },
+  {
+   "id": "jd09",
+   "title": "Unrelated — pastry chef",
+   "lang": "en",
+   "requirements": 4,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 202,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 2,
+    "evidencedRequired": 0,
+    "evidenced": 0,
+    "related": 0,
+    "discussion": 4
+   },
+   "route": [],
+   "levels": [
+    {
+     "text": "Prepare croissants, tarts and plated desserts",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Manage the pastry station and stock rotation",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "2 years in a hotel kitchen",
+     "category": "experience",
+     "status": "required",
+     "level": "discussion",
+     "note": "years-not-shown"
+    },
+    {
+     "text": "Food hygiene level 2 certificate",
+     "category": "certification",
+     "status": "required",
+     "level": "discussion",
+     "note": "credential-not-shown"
+    }
+   ]
+  },
+  {
+   "id": "jd10",
+   "title": "Unrelated — social media manager",
+   "lang": "en",
+   "requirements": 3,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 185,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 3,
+    "evidencedRequired": 1,
+    "evidenced": 1,
+    "related": 0,
+    "discussion": 2
+   },
+   "route": [
+    "c6"
+   ],
+   "levels": [
+    {
+     "text": "Content calendar planning",
+     "category": "other",
+     "status": "required",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Copywriting in English and Arabic",
+     "category": "language",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "3 years agency experience",
+     "category": "experience",
+     "status": "required",
+     "level": "discussion",
+     "note": "years-not-shown"
+    }
+   ]
+  },
+  {
+   "id": "jd11",
+   "title": "Construction QA/QC with ITPs",
+   "lang": "en",
+   "requirements": 8,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 372,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 5,
+    "evidencedRequired": 0,
+    "evidenced": 2,
+    "related": 0,
+    "discussion": 6
+   },
+   "route": [
+    "c1"
+   ],
+   "levels": [
+    {
+     "text": "implement project quality plans, ITPs and method statements on civil works",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "coordinate inspections with the client's consultant",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "control documents and NCRs",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "B.Sc",
+     "category": "education",
+     "status": "required",
+     "level": "discussion",
+     "note": "attribute-not-shown"
+    },
+    {
+     "text": "Civil Engineering",
+     "category": "other",
+     "status": "required",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Saudi Council of Engineers (SCE) registration required",
+     "category": "certification",
+     "status": "required",
+     "level": "discussion",
+     "note": "credential-not-shown"
+    },
+    {
+     "text": "7 years on infrastructure projects",
+     "category": "experience",
+     "status": "required",
+     "level": "discussion",
+     "note": "years-not-shown"
+    },
+    {
+     "text": "Based in Riyadh or willing to relocate",
+     "category": "location",
+     "status": "required",
+     "level": "discussion",
+     "note": "attribute-not-shown"
+    }
+   ]
+  },
+  {
+   "id": "jd12",
+   "title": "Calibration technician",
+   "lang": "en",
+   "requirements": 4,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 211,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 0,
+    "evidencedRequired": 0,
+    "evidenced": 3,
+    "related": 0,
+    "discussion": 1
+   },
+   "route": [
+    "c2",
+    "c4",
+    "c6"
+   ],
+   "levels": [
+    {
+     "text": "Plan and perform calibration of gauges and torque tools",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Run MSA / gauge R&R studies",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Keep the calibration register audit-ready",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "ISO/IEC 17025 exposure",
+     "category": "other",
+     "status": "preferred",
+     "level": "discussion",
+     "note": "none"
+    }
+   ]
+  },
+  {
+   "id": "jd13",
+   "title": "Lean / CI engineer",
+   "lang": "en",
+   "requirements": 4,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 188,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 2,
+    "evidencedRequired": 0,
+    "evidenced": 1,
+    "related": 2,
+    "discussion": 1
+   },
+   "route": [
+    "c3",
+    "c4",
+    "c6",
+    "c8"
+   ],
+   "levels": [
+    {
+     "text": "You will lead kaizen events, 5S audits and value-stream mapping",
+     "category": "skill",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Six Sigma Black Belt certified (required)",
+     "category": "certification",
+     "status": "required",
+     "level": "related",
+     "note": "credential-not-shown"
+    },
+    {
+     "text": "Experience with DMAIC projects",
+     "category": "skill",
+     "status": "unspecified",
+     "level": "related",
+     "note": "only-related"
+    },
+    {
+     "text": "6 years minimum",
+     "category": "experience",
+     "status": "required",
+     "level": "discussion",
+     "note": "years-not-shown"
+    }
+   ]
+  },
+  {
+   "id": "jd14",
+   "title": "Mixed requirement line",
+   "lang": "en",
+   "requirements": 2,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 147,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 1,
+    "evidencedRequired": 0,
+    "evidenced": 0,
+    "related": 1,
+    "discussion": 1
+   },
+   "route": [
+    "c6"
+   ],
+   "levels": [
+    {
+     "text": "5 years in manufacturing quality, ISO 9001 and internal audits, plus Arabic lang",
+     "category": "experience",
+     "status": "required",
+     "level": "related",
+     "note": "years-not-shown"
+    },
+    {
+     "text": "PMP certification preferred",
+     "category": "certification",
+     "status": "preferred",
+     "level": "discussion",
+     "note": "credential-not-shown"
+    }
+   ]
+  },
+  {
+   "id": "jd15",
+   "title": "Dates must not become experience",
+   "lang": "en",
+   "requirements": 3,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 196,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 3,
+    "evidencedRequired": 1,
+    "evidenced": 1,
+    "related": 0,
+    "discussion": 2
+   },
+   "route": [
+    "c1"
+   ],
+   "levels": [
+    {
+     "text": "Visual and dimensional inspection",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Available for a 2027 project start",
+     "category": "other",
+     "status": "required",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Contract ends December 2028",
+     "category": "other",
+     "status": "required",
+     "level": "discussion",
+     "note": "none"
+    }
+   ]
+  },
+  {
+   "id": "jd16",
+   "title": "8D/5S near numbers",
+   "lang": "en",
+   "requirements": 3,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 125,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 3,
+    "evidencedRequired": 3,
+    "evidenced": 3,
+    "related": 0,
+    "discussion": 0
+   },
+   "route": [
+    "c3",
+    "c8",
+    "c4",
+    "c6"
+   ],
+   "levels": [
+    {
+     "text": "Strong 8D and 5S practice",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "8D reports within 10 days of a complaint",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Lead 5S audits weekly",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  },
+  {
+   "id": "jd17",
+   "title": "Training vs registration",
+   "lang": "en",
+   "requirements": 2,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 140,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 2,
+    "evidencedRequired": 1,
+    "evidenced": 1,
+    "related": 1,
+    "discussion": 0
+   },
+   "route": [
+    "c6",
+    "c4"
+   ],
+   "levels": [
+    {
+     "text": "Registered ISO 9001 lead auditor (IRCA) — required",
+     "category": "certification",
+     "status": "required",
+     "level": "related",
+     "note": "credential-not-shown"
+    },
+    {
+     "text": "Experience conducting internal audits against ISO 9001",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  },
+  {
+   "id": "jd18",
+   "title": "Over-long posting (truncation)",
+   "lang": "en",
+   "requirements": 24,
+   "excluded": [],
+   "truncated": {
+    "chars": true,
+    "originalLength": 17944,
+    "requirementsDropped": 567
+   },
+   "counts": {
+    "required": 24,
+    "evidencedRequired": 24,
+    "evidenced": 24,
+    "related": 0,
+    "discussion": 0
+   },
+   "route": [
+    "c1"
+   ],
+   "levels": [
+    {
+     "text": "Requirement 1: inspection checklist item number 1 for line 1",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 2: inspection checklist item number 2 for line 2",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 3: inspection checklist item number 3 for line 3",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 4: inspection checklist item number 4 for line 4",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 5: inspection checklist item number 5 for line 5",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 6: inspection checklist item number 6 for line 6",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 7: inspection checklist item number 7 for line 7",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 8: inspection checklist item number 8 for line 8",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 9: inspection checklist item number 9 for line 9",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 10: inspection checklist item number 10 for line 10",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 11: inspection checklist item number 11 for line 11",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 12: inspection checklist item number 12 for line 12",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 13: inspection checklist item number 13 for line 13",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 14: inspection checklist item number 14 for line 14",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 15: inspection checklist item number 15 for line 15",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 16: inspection checklist item number 16 for line 16",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 17: inspection checklist item number 17 for line 17",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 18: inspection checklist item number 18 for line 18",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 19: inspection checklist item number 19 for line 19",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 20: inspection checklist item number 20 for line 20",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 21: inspection checklist item number 21 for line 21",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 22: inspection checklist item number 22 for line 22",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 23: inspection checklist item number 23 for line 23",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Requirement 24: inspection checklist item number 24 for line 24",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  },
+  {
+   "id": "jd19",
+   "title": "Single-line paragraph JD",
+   "lang": "en",
+   "requirements": 4,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 248,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 1,
+    "evidencedRequired": 1,
+    "evidenced": 2,
+    "related": 1,
+    "discussion": 1
+   },
+   "route": [
+    "c6",
+    "c1"
+   ],
+   "levels": [
+    {
+     "text": "We are hiring a Quality Engineer to support our assembly line",
+     "category": "skill",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "The ideal candidate has 4 years of manufacturing quality experience, knows SPC a",
+     "category": "experience",
+     "status": "unspecified",
+     "level": "related",
+     "note": "years-not-shown"
+    },
+    {
+     "text": "Experience with ISO 14001 is a plus",
+     "category": "skill",
+     "status": "preferred",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Must speak English",
+     "category": "language",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  },
+  {
+   "id": "jd20",
+   "title": "Welding inspector",
+   "lang": "en",
+   "requirements": 3,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 140,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 3,
+    "evidencedRequired": 2,
+    "evidenced": 2,
+    "related": 0,
+    "discussion": 1
+   },
+   "route": [
+    "c1"
+   ],
+   "levels": [
+    {
+     "text": "CSWIP 3.1 or AWS CWI certification (mandatory)",
+     "category": "certification",
+     "status": "required",
+     "level": "discussion",
+     "note": "credential-not-shown"
+    },
+    {
+     "text": "Review WPS/PQR and weld maps",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Visual inspection of welds",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  },
+  {
+   "id": "jd21",
+   "title": "Arabic quality manager",
+   "lang": "ar",
+   "requirements": 4,
+   "excluded": [
+    "negated"
+   ],
+   "truncated": {
+    "chars": false,
+    "originalLength": 223,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 1,
+    "evidencedRequired": 0,
+    "evidenced": 3,
+    "related": 0,
+    "discussion": 1
+   },
+   "route": [
+    "c8",
+    "c4",
+    "c6"
+   ],
+   "levels": [
+    {
+     "text": "قيادة فريق الجودة وتطوير مهاراته",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "الإشراف على نظام إدارة الجودة وفق أيزو 9001",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "متابعة الإجراءات التصحيحية مع الموردين",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "خبرة ١٠ سنوات منها ٥ سنوات في الإدارة",
+     "category": "experience",
+     "status": "required",
+     "level": "discussion",
+     "note": "years-not-shown"
+    }
+   ]
+  },
+  {
+   "id": "jd22",
+   "title": "Mixed Arabic/English",
+   "lang": "mixed",
+   "requirements": 3,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 142,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 2,
+    "evidencedRequired": 2,
+    "evidenced": 2,
+    "related": 0,
+    "discussion": 1
+   },
+   "route": [
+    "c1",
+    "c6"
+   ],
+   "levels": [
+    {
+     "text": "Experience with ITP and NCR closure",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Bilingual: Arabic & English",
+     "category": "language",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "يفضل خبرة في المشاريع الإنشائية",
+     "category": "other",
+     "status": "preferred",
+     "level": "discussion",
+     "note": "none"
+    }
+   ]
+  },
+  {
+   "id": "jd23",
+   "title": "Document controller",
+   "lang": "en",
+   "requirements": 3,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 141,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 0,
+    "evidencedRequired": 0,
+    "evidenced": 1,
+    "related": 0,
+    "discussion": 2
+   },
+   "route": [
+    "c6"
+   ],
+   "levels": [
+    {
+     "text": "Maintain controlled documents and procedures",
+     "category": "skill",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Manage transmittals in Aconex",
+     "category": "other",
+     "status": "unspecified",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Diploma or degree in any field",
+     "category": "education",
+     "status": "unspecified",
+     "level": "discussion",
+     "note": "attribute-not-shown"
+    }
+   ]
+  },
+  {
+   "id": "jd24",
+   "title": "HSE officer (adjacent)",
+   "lang": "en",
+   "requirements": 3,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 131,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 3,
+    "evidencedRequired": 1,
+    "evidenced": 1,
+    "related": 0,
+    "discussion": 2
+   },
+   "route": [
+    "c1"
+   ],
+   "levels": [
+    {
+     "text": "NEBOSH IGC certificate required",
+     "category": "certification",
+     "status": "required",
+     "level": "discussion",
+     "note": "credential-not-shown"
+    },
+    {
+     "text": "Conduct site safety inspections",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "ISO 45001 implementation experience",
+     "category": "skill",
+     "status": "required",
+     "level": "discussion",
+     "note": "none"
+    }
+   ]
+  },
+  {
+   "id": "jd25",
+   "title": "Production supervisor",
+   "lang": "en",
+   "requirements": 4,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 149,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 0,
+    "evidencedRequired": 0,
+    "evidenced": 2,
+    "related": 0,
+    "discussion": 2
+   },
+   "route": [
+    "c8"
+   ],
+   "levels": [
+    {
+     "text": "Supervise 25 operators on an assembly line",
+     "category": "skill",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Meet daily output targets",
+     "category": "other",
+     "status": "unspecified",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Train operators on standard work",
+     "category": "skill",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "3 shifts rotation",
+     "category": "other",
+     "status": "unspecified",
+     "level": "discussion",
+     "note": "none"
+    }
+   ]
+  },
+  {
+   "id": "jd26",
+   "title": "Unrelated — software engineer",
+   "lang": "en",
+   "requirements": 3,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 126,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 3,
+    "evidencedRequired": 0,
+    "evidenced": 0,
+    "related": 0,
+    "discussion": 3
+   },
+   "route": [],
+   "levels": [
+    {
+     "text": "6 years with TypeScript and React",
+     "category": "experience",
+     "status": "required",
+     "level": "discussion",
+     "note": "years-not-shown"
+    },
+    {
+     "text": "Experience with GraphQL",
+     "category": "other",
+     "status": "required",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Computer Science degree",
+     "category": "education",
+     "status": "required",
+     "level": "discussion",
+     "note": "attribute-not-shown"
+    }
+   ]
+  },
+  {
+   "id": "jd27",
+   "title": "Challenge text is not capability",
+   "lang": "en",
+   "requirements": 2,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 134,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 0,
+    "evidencedRequired": 0,
+    "evidenced": 1,
+    "related": 0,
+    "discussion": 1
+   },
+   "route": [
+    "c3"
+   ],
+   "levels": [
+    {
+     "text": "Handle customer complaints and returns (RMA)",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Run root-cause analysis on field failures",
+     "category": "responsibility",
+     "status": "unspecified",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  },
+  {
+   "id": "jd28",
+   "title": "Required/preferred headings with markdown",
+   "lang": "en",
+   "requirements": 4,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 168,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 2,
+    "evidencedRequired": 1,
+    "evidenced": 2,
+    "related": 0,
+    "discussion": 2
+   },
+   "route": [
+    "c3",
+    "c4",
+    "c2",
+    "c7"
+   ],
+   "levels": [
+    {
+     "text": "Experience with CAPA and NCR management",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "Knowledge of BOM and engineering change control",
+     "category": "skill",
+     "status": "required",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "SolidWorks",
+     "category": "skill",
+     "status": "preferred",
+     "level": "discussion",
+     "note": "none"
+    },
+    {
+     "text": "Power BI",
+     "category": "skill",
+     "status": "preferred",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  },
+  {
+   "id": "jd29",
+   "title": "Empty / whitespace",
+   "lang": "mixed",
+   "requirements": 0,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 8,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 0,
+    "evidencedRequired": 0,
+    "evidenced": 0,
+    "related": 0,
+    "discussion": 0
+   },
+   "route": [],
+   "levels": []
+  },
+  {
+   "id": "jd30",
+   "title": "HTML-looking text treated as data",
+   "lang": "en",
+   "requirements": 2,
+   "excluded": [],
+   "truncated": {
+    "chars": false,
+    "originalLength": 152,
+    "requirementsDropped": 0
+   },
+   "counts": {
+    "required": 2,
+    "evidencedRequired": 2,
+    "evidenced": 2,
+    "related": 0,
+    "discussion": 0
+   },
+   "route": [
+    "c1",
+    "c2"
+   ],
+   "levels": [
+    {
+     "text": "<b>SPC</b> and capability studies <script>alert(1)</script>",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    },
+    {
+     "text": "<img src=x onerror=alert(1)> inspection planning",
+     "category": "skill",
+     "status": "required",
+     "level": "evidenced",
+     "note": "direct"
+    }
+   ]
+  }
+ ]
+}

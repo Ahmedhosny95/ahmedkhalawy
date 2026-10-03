@@ -1,0 +1,2 @@
+built experiments/cloud-006-design/dist
+exit=0

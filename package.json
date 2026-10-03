@@ -1,0 +1,31 @@
+{
+  "name": "ahmedkhalawy-public-harness",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Public-only reproducible test harness (cloud-001). Not the production application.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "serve": "node scripts/serve.mjs",
+    "test:browser": "npm run build && playwright test",
+    "test:webkit": "npm run build && playwright test --project=webkit",
+    "perf": "npm run build && node scripts/perf.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.56.1",
+    "@types/node": "26.6.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "esbuild": "0.28.2",
+    "typescript": "7.0.2"
+  }
+}

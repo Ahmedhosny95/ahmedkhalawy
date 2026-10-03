@@ -1,0 +1,644 @@
+{
+  "profile": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 2,
+    "isMobile": false,
+    "network": {
+      "offline": false,
+      "latency": 150,
+      "downloadThroughput": 209715.2,
+      "uploadThroughput": 96000
+    },
+    "cpuSlowdown": 4
+  },
+  "runs": 3,
+  "note": "Lab/emulated adapter harness only; not field or production performance. Repeat = second load in the same context (HTTP cache warm).",
+  "browserVersion": "141.0.7390.37",
+  "results": {
+    "/": {
+      "cold": {
+        "median": {
+          "lcpMs": 892,
+          "cls": 0,
+          "bytes": 441467,
+          "longTasks": 3,
+          "longTaskMs": 303
+        },
+        "runs": [
+          {
+            "lcpMs": 892,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 441467,
+            "requests": 13,
+            "longTasks": 4,
+            "longTaskMs": 383,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Liberation Serif (system) x19",
+                  "Liberation Serif (system) x17"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "Liberation Sans (system) x51",
+                  "DejaVu Sans (system) x8"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/": 12737,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/mark.svg": 601,
+              "/prerender-handoff.js": 2393,
+              "/styles/public-optimization.css": 15945,
+              "/styles/manrope-latin-variable.woff2": 25058,
+              "/styles/lora-latin-variable.woff2": 38010,
+              "/assets/ahmed-portraits-20261001/ahmed-hero.webp": 37928,
+              "/styles/lora-latin-italic-variable.woff2": 40994,
+              "/public-entry.js": 265616
+            }
+          },
+          {
+            "lcpMs": 892,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 441467,
+            "requests": 13,
+            "longTasks": 2,
+            "longTaskMs": 259,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Liberation Serif (system) x19",
+                  "Liberation Serif (system) x17"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "Liberation Sans (system) x51",
+                  "DejaVu Sans (system) x8"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/": 12737,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/mark.svg": 601,
+              "/prerender-handoff.js": 2393,
+              "/styles/public-optimization.css": 15945,
+              "/styles/manrope-latin-variable.woff2": 25058,
+              "/styles/lora-latin-variable.woff2": 38010,
+              "/assets/ahmed-portraits-20261001/ahmed-hero.webp": 37928,
+              "/styles/lora-latin-italic-variable.woff2": 40994,
+              "/public-entry.js": 265616
+            }
+          },
+          {
+            "lcpMs": 896,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 441467,
+            "requests": 13,
+            "longTasks": 3,
+            "longTaskMs": 303,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Liberation Serif (system) x19",
+                  "Liberation Serif (system) x17"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "Liberation Sans (system) x51",
+                  "DejaVu Sans (system) x8"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/": 12737,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/mark.svg": 601,
+              "/prerender-handoff.js": 2393,
+              "/styles/public-optimization.css": 15945,
+              "/styles/manrope-latin-variable.woff2": 25058,
+              "/styles/lora-latin-variable.woff2": 38010,
+              "/assets/ahmed-portraits-20261001/ahmed-hero.webp": 37928,
+              "/styles/lora-latin-italic-variable.woff2": 40994,
+              "/public-entry.js": 265616
+            }
+          }
+        ]
+      },
+      "repeat": {
+        "median": {
+          "lcpMs": 588,
+          "cls": 0,
+          "bytes": 298876,
+          "longTasks": 2,
+          "longTaskMs": 269
+        },
+        "runs": [
+          {
+            "lcpMs": 576,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 298876,
+            "requests": 13,
+            "longTasks": 2,
+            "longTaskMs": 265,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Lora (custom) x18",
+                  "Liberation Serif (system) x17"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "DejaVu Sans (system) x8",
+                  "Liberation Sans (system) x1",
+                  "Manrope ExtraLight (custom) x50"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/styles/manrope-latin-variable.woff2": 0,
+              "/assets/ahmed-portraits-20261001/ahmed-hero.webp": 0,
+              "/styles/lora-latin-variable.woff2": 0,
+              "/mark.svg": 0,
+              "/": 12737,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/prerender-handoff.js": 2393,
+              "/styles/public-optimization.css": 15945,
+              "/styles/lora-latin-italic-variable.woff2": 0,
+              "/public-entry.js": 265616
+            }
+          },
+          {
+            "lcpMs": 588,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 298876,
+            "requests": 13,
+            "longTasks": 3,
+            "longTaskMs": 295,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Lora (custom) x18",
+                  "Liberation Serif (system) x17"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "DejaVu Sans (system) x8",
+                  "Liberation Sans (system) x1",
+                  "Manrope ExtraLight (custom) x50"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/assets/ahmed-portraits-20261001/ahmed-hero.webp": 0,
+              "/mark.svg": 0,
+              "/styles/manrope-latin-variable.woff2": 0,
+              "/styles/lora-latin-variable.woff2": 0,
+              "/": 12737,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/prerender-handoff.js": 2393,
+              "/styles/public-optimization.css": 15945,
+              "/styles/lora-latin-italic-variable.woff2": 0,
+              "/public-entry.js": 265616
+            }
+          },
+          {
+            "lcpMs": 596,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 298876,
+            "requests": 13,
+            "longTasks": 2,
+            "longTaskMs": 269,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Lora (custom) x18",
+                  "Liberation Serif (system) x17"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "DejaVu Sans (system) x8",
+                  "Liberation Sans (system) x1",
+                  "Manrope ExtraLight (custom) x50"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/styles/manrope-latin-variable.woff2": 0,
+              "/assets/ahmed-portraits-20261001/ahmed-hero.webp": 0,
+              "/mark.svg": 0,
+              "/styles/lora-latin-variable.woff2": 0,
+              "/": 12737,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/prerender-handoff.js": 2393,
+              "/styles/public-optimization.css": 15945,
+              "/styles/lora-latin-italic-variable.woff2": 0,
+              "/public-entry.js": 265616
+            }
+          }
+        ]
+      }
+    },
+    "/about": {
+      "cold": {
+        "median": {
+          "lcpMs": 876,
+          "cls": 0,
+          "bytes": 483097,
+          "longTasks": 4,
+          "longTaskMs": 463
+        },
+        "runs": [
+          {
+            "lcpMs": 856,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 483097,
+            "requests": 13,
+            "longTasks": 3,
+            "longTaskMs": 397,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Liberation Serif (system) x17",
+                  "Liberation Serif (system) x18"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "Liberation Sans (system) x24"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/about": 36387,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/mark.svg": 601,
+              "/prerender-handoff.js": 2393,
+              "/styles/public-optimization.css": 15945,
+              "/styles/manrope-latin-variable.woff2": 25058,
+              "/styles/lora-latin-variable.woff2": 38010,
+              "/assets/ahmed-portraits-20261001/ahmed-profile.webp": 55908,
+              "/styles/lora-latin-italic-variable.woff2": 40994,
+              "/public-entry.js": 265616
+            }
+          },
+          {
+            "lcpMs": 876,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 483097,
+            "requests": 13,
+            "longTasks": 4,
+            "longTaskMs": 463,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Liberation Serif (system) x17",
+                  "Liberation Serif (system) x18"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "Liberation Sans (system) x24"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/about": 36387,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/mark.svg": 601,
+              "/prerender-handoff.js": 2393,
+              "/styles/public-optimization.css": 15945,
+              "/styles/manrope-latin-variable.woff2": 25058,
+              "/styles/lora-latin-variable.woff2": 38010,
+              "/assets/ahmed-portraits-20261001/ahmed-profile.webp": 55908,
+              "/styles/lora-latin-italic-variable.woff2": 40994,
+              "/public-entry.js": 265616
+            }
+          },
+          {
+            "lcpMs": 884,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 483097,
+            "requests": 13,
+            "longTasks": 4,
+            "longTaskMs": 468,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Liberation Serif (system) x17",
+                  "Liberation Serif (system) x18"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "Liberation Sans (system) x24"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/about": 36387,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/mark.svg": 601,
+              "/prerender-handoff.js": 2393,
+              "/styles/public-optimization.css": 15945,
+              "/styles/manrope-latin-variable.woff2": 25058,
+              "/styles/lora-latin-variable.woff2": 38010,
+              "/assets/ahmed-portraits-20261001/ahmed-profile.webp": 55908,
+              "/styles/lora-latin-italic-variable.woff2": 40994,
+              "/public-entry.js": 265616
+            }
+          }
+        ]
+      },
+      "repeat": {
+        "median": {
+          "lcpMs": 600,
+          "cls": 0,
+          "bytes": 322526,
+          "longTasks": 4,
+          "longTaskMs": 466
+        },
+        "runs": [
+          {
+            "lcpMs": 604,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 322526,
+            "requests": 13,
+            "longTasks": 4,
+            "longTaskMs": 455,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Lora (custom) x17",
+                  "Liberation Serif (system) x18"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "Manrope ExtraLight (custom) x24"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/styles/lora-latin-variable.woff2": 0,
+              "/styles/manrope-latin-variable.woff2": 0,
+              "/mark.svg": 0,
+              "/assets/ahmed-portraits-20261001/ahmed-profile.webp": 0,
+              "/about": 36387,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/styles/public-optimization.css": 15945,
+              "/styles/lora-latin-italic-variable.woff2": 0,
+              "/prerender-handoff.js": 2393,
+              "/public-entry.js": 265616
+            }
+          },
+          {
+            "lcpMs": 600,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 322526,
+            "requests": 13,
+            "longTasks": 4,
+            "longTaskMs": 498,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Lora (custom) x17",
+                  "Liberation Serif (system) x18"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "Manrope ExtraLight (custom) x24"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/styles/manrope-latin-variable.woff2": 0,
+              "/styles/lora-latin-variable.woff2": 0,
+              "/mark.svg": 0,
+              "/assets/ahmed-portraits-20261001/ahmed-profile.webp": 0,
+              "/about": 36387,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/styles/public-optimization.css": 15945,
+              "/styles/lora-latin-italic-variable.woff2": 0,
+              "/prerender-handoff.js": 2393,
+              "/public-entry.js": 265616
+            }
+          },
+          {
+            "lcpMs": 588,
+            "lcpElement": "P",
+            "cls": 0,
+            "bytes": 322526,
+            "requests": 13,
+            "longTasks": 4,
+            "longTaskMs": 466,
+            "fonts": [
+              "Portfolio Manrope normal loaded",
+              "Portfolio Lora normal loaded",
+              "Portfolio Lora italic loaded"
+            ],
+            "platformFonts": [
+              {
+                "selector": "h1",
+                "fonts": [
+                  "Lora (custom) x17",
+                  "Liberation Serif (system) x18"
+                ]
+              },
+              {
+                "selector": "body",
+                "fonts": []
+              },
+              {
+                "selector": "p",
+                "fonts": [
+                  "Manrope ExtraLight (custom) x24"
+                ]
+              }
+            ],
+            "handoffComplete": true,
+            "sizes": {
+              "/styles/manrope-latin-variable.woff2": 0,
+              "/styles/lora-latin-variable.woff2": 0,
+              "/mark.svg": 0,
+              "/assets/ahmed-portraits-20261001/ahmed-profile.webp": 0,
+              "/about": 36387,
+              "/public-adapter.css": 1454,
+              "/styles/search.css": 731,
+              "/styles/public-optimization.css": 15945,
+              "/styles/lora-latin-italic-variable.woff2": 0,
+              "/prerender-handoff.js": 2393,
+              "/public-entry.js": 265616
+            }
+          }
+        ]
+      }
+    }
+  },
+  "blockedRequests": []
+}

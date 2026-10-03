@@ -1,0 +1,18 @@
+/* cloud-008 hero tokens — the adaptation surface. Change these, not the component rules. */
+@font-face{font-family:"Hero Manrope";src:url("/fonts/manrope-latin-variable.woff2") format("woff2");font-weight:200 800;font-display:swap}
+@font-face{font-family:"Hero Lora";src:url("/fonts/lora-latin-variable.woff2") format("woff2");font-weight:400 700;font-display:swap}
+:root{
+  /* scene */
+  --hero-bg-0:#06110f; --hero-bg-1:#0c211d; --hero-bg-2:#1b3d34;
+  --hero-glow-1:#f3d9a4; --hero-glow-2:#d39a4a; --hero-line:rgba(214,226,214,.11); --hero-ring:rgba(214,226,214,.07);
+  --hero-ink:#f3efe4; --hero-ink-2:#c5cec6; --hero-ink-3:#93a29a;
+  /* page */
+  --paper:#f6f4ee; --paper-2:#eceee5; --ink:#10302a; --ink-2:#33463f; --muted:#52615a; --rule:#cfd6cb; --accent:#8a5210;
+  /* type */
+  --sans:"Hero Manrope",ui-sans-serif,system-ui,"Segoe UI",Arial,sans-serif; --serif:"Hero Lora",Georgia,serif;
+  --hero-display:clamp(2.7rem,1.1rem + 5.2vw,5.6rem); --hero-display-weight:300;
+  /* motion */
+  --hero-enter:900ms; --hero-enter-ease:cubic-bezier(.16,.84,.24,1); --hero-stagger:90ms;
+  --hero-pulse-period:9s; --hero-ring-period:14s; --dur-ui:160ms;
+}
+@media (prefers-reduced-motion:reduce){:root{--hero-enter:0ms;--hero-stagger:0ms}}

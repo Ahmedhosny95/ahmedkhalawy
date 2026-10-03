@@ -1,0 +1,480 @@
+{
+  "config": {
+    "configFile": "/home/user/ahmedkhalawy/experiments/cloud-006-design/playwright.config.ts",
+    "rootDir": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/cloud-006b-20261003T103117/before-defects/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/home/user/ahmedkhalawy/test-results/cloud-006",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 1,
+    "webServer": {
+      "command": "node scripts/serve.mjs",
+      "env": {
+        "PORT": "4316"
+      },
+      "url": "http://127.0.0.1:4316/",
+      "reuseExistingServer": false,
+      "timeout": 20000
+    }
+  },
+  "suites": [
+    {
+      "title": "prototype.spec.ts",
+      "file": "prototype.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CLOUD006B CV specimen prints to exactly 4 A4 pages without overflow; min type ≥ 9 pt",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 233,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m9\u001b[39m\nReceived:    \u001b[31m8\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m9\u001b[39m\nReceived:    \u001b[31m8\u001b[39m\n    at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:277:121",
+                    "location": {
+                      "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                      "column": 121,
+                      "line": 277
+                    },
+                    "snippet": "  275 |   }));\n  276 |   expect(pages.length).toBe(4);\n> 277 |   for (const p of pages) {expect(p.overflow).toBe(false); expect(p.clearancePx).toBeGreaterThan(0); expect(p.minFontPt).toBeGreaterThanOrEqual(9);}\n      |                                                                                                                         ^\n  278 |   const pdf = `${EV}/cv-specimen.pdf`;\n  279 |   await page.pdf({path: pdf, format: 'A4', printBackground: true, preferCSSPageSize: true});\n  280 |   const info = execFileSync('pdfinfo', [pdf], {encoding: 'utf8'});"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                        "column": 121,
+                        "line": 277
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: >= \u001b[32m9\u001b[39m\nReceived:    \u001b[31m8\u001b[39m\n\n  275 |   }));\n  276 |   expect(pages.length).toBe(4);\n> 277 |   for (const p of pages) {expect(p.overflow).toBe(false); expect(p.clearancePx).toBeGreaterThan(0); expect(p.minFontPt).toBeGreaterThanOrEqual(9);}\n      |                                                                                                                         ^\n  278 |   const pdf = `${EV}/cv-specimen.pdf`;\n  279 |   await page.pdf({path: pdf, format: 'A4', printBackground: true, preferCSSPageSize: true});\n  280 |   const info = execFileSync('pdfinfo', [pdf], {encoding: 'utf8'});\n    at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:277:121"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T10:31:20.318Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/user/ahmedkhalawy/test-results/cloud-006/prototype-CLOUD006B-CV-spe-48835-ut-overflow-min-type-≥-9-pt-chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                    "column": 121,
+                    "line": 277
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "19b1a4b9c75f61794625-8dd963fcc995555c3388",
+          "file": "prototype.spec.ts",
+          "line": 267,
+          "column": 1
+        },
+        {
+          "title": "CLOUD006B head: title, description, canonical and JSON-LD follow client navigation, Back and Forward (single tags)",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 352,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Ahmed Khalawy (احمد خلوي): current Yuksel Saudia role, previous Eibla experience, quality leadership, skills and precisely stated ISO 9001 auditor training.\",\u001b[39m\n\u001b[31m+   \"Ahmed Khalawy (احمد خلوي), Senior QA/QC Engineer in Riyadh, works across quality assurance, quality control and quality management in manufacturing and construction.\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Ahmed Khalawy (احمد خلوي): current Yuksel Saudia role, previous Eibla experience, quality leadership, skills and precisely stated ISO 9001 auditor training.\",\u001b[39m\n\u001b[31m+   \"Ahmed Khalawy (احمد خلوي), Senior QA/QC Engineer in Riyadh, works across quality assurance, quality control and quality management in manufacturing and construction.\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at expectRoute (/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:372:20)\n    at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:376:121",
+                    "location": {
+                      "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                      "column": 20,
+                      "line": 372
+                    },
+                    "snippet": "  370 |     const h = await head();\n  371 |     expect(h.title).toBe(seo[r].title);\n> 372 |     expect(h.desc).toEqual([seo[r].description]); expect(h.canon).toEqual([seo[r].url]);\n      |                    ^\n  373 |     expect(h.ld).toEqual([seedSchema(r)]); expect(h.robots).toEqual(['noindex, nofollow']);\n  374 |   };\n  375 |   await expectRoute('/');"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                        "column": 20,
+                        "line": 372
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"Ahmed Khalawy (احمد خلوي): current Yuksel Saudia role, previous Eibla experience, quality leadership, skills and precisely stated ISO 9001 auditor training.\",\u001b[39m\n\u001b[31m+   \"Ahmed Khalawy (احمد خلوي), Senior QA/QC Engineer in Riyadh, works across quality assurance, quality control and quality management in manufacturing and construction.\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  370 |     const h = await head();\n  371 |     expect(h.title).toBe(seo[r].title);\n> 372 |     expect(h.desc).toEqual([seo[r].description]); expect(h.canon).toEqual([seo[r].url]);\n      |                    ^\n  373 |     expect(h.ld).toEqual([seedSchema(r)]); expect(h.robots).toEqual(['noindex, nofollow']);\n  374 |   };\n  375 |   await expectRoute('/');\n    at expectRoute (/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:372:20)\n    at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:376:121"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-03T10:31:26.132Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/home/user/ahmedkhalawy/test-results/cloud-006/prototype-CLOUD006B-head-t-c0137-ck-and-Forward-single-tags--chromium/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                    "column": 20,
+                    "line": 372
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "19b1a4b9c75f61794625-f5778e5f4d30922942e4",
+          "file": "prototype.spec.ts",
+          "line": 359,
+          "column": 1
+        }
+      ],
+      "suites": [
+        {
+          "title": "CLOUD006B history",
+          "file": "prototype.spec.ts",
+          "line": 312,
+          "column": 6,
+          "specs": [
+            {
+              "title": "same-route hash: open disclosure, Answers, Back, Forward — state, scroll and focus kept",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1294,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:332:23",
+                        "location": {
+                          "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                          "column": 23,
+                          "line": 332
+                        },
+                        "snippet": "  330 |     const back = await page.evaluate(() => ({y: scrollY, open: (document.querySelector('details.disclosure-quotes') as HTMLDetailsElement).open,\n  331 |       focus: document.activeElement?.getAttribute('href') ?? document.activeElement?.tagName, sameMain: !!(document.querySelector('main') as any).__same}));\n> 332 |     expect(back.open).toBe(true); expect(back.sameMain).toBe(true); expect(back.focus).toBe('#answers');\n      |                       ^\n  333 |     expect(Math.abs(back.y - y0)).toBeLessThanOrEqual(TOL);\n  334 |     await page.goForward(); await expect(page).toHaveURL(/\\/about#answers$/); await page.waitForTimeout(250);\n  335 |     const fwd = await page.evaluate(() => ({y: scrollY, open: (document.querySelector('details.disclosure-quotes') as HTMLDetailsElement).open, focus: document.activeElement?.id}));"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                            "column": 23,
+                            "line": 332
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  330 |     const back = await page.evaluate(() => ({y: scrollY, open: (document.querySelector('details.disclosure-quotes') as HTMLDetailsElement).open,\n  331 |       focus: document.activeElement?.getAttribute('href') ?? document.activeElement?.tagName, sameMain: !!(document.querySelector('main') as any).__same}));\n> 332 |     expect(back.open).toBe(true); expect(back.sameMain).toBe(true); expect(back.focus).toBe('#answers');\n      |                       ^\n  333 |     expect(Math.abs(back.y - y0)).toBeLessThanOrEqual(TOL);\n  334 |     await page.goForward(); await expect(page).toHaveURL(/\\/about#answers$/); await page.waitForTimeout(250);\n  335 |     const fwd = await page.evaluate(() => ({y: scrollY, open: (document.querySelector('details.disclosure-quotes') as HTMLDetailsElement).open, focus: document.activeElement?.id}));\n    at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:332:23"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-03T10:31:21.557Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/user/ahmedkhalawy/test-results/cloud-006/prototype-CLOUD006B-histor-8c525-state-scroll-and-focus-kept-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                        "column": 23,
+                        "line": 332
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19b1a4b9c75f61794625-c0488e98a7f605a18cdc",
+              "file": "prototype.spec.ts",
+              "line": 313,
+              "column": 3
+            },
+            {
+              "title": "cross-route Back/Forward restores open disclosure and scroll (two-sided)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1255,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:352:20",
+                        "location": {
+                          "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                          "column": 20,
+                          "line": 352
+                        },
+                        "snippet": "  350 |     await page.goBack(); await expect(page).toHaveURL(/\\/about$/); await page.waitForTimeout(250);\n  351 |     const b = await page.evaluate(() => ({y: scrollY, open: (document.querySelector('details.disclosure-quotes') as HTMLDetailsElement).open, focus: document.activeElement?.tagName}));\n> 352 |     expect(b.open).toBe(true); expect(Math.abs(b.y - y0)).toBeLessThanOrEqual(TOL); expect(b.focus).not.toBe('BODY');\n      |                    ^\n  353 |     await page.goForward(); await expect(page).toHaveURL(/\\/projects$/); await page.waitForTimeout(250);\n  354 |     expect(Math.abs(await page.evaluate(() => scrollY) - 700)).toBeLessThanOrEqual(TOL);\n  355 |     timelines['CLOUD006B cross-route history'] = {y0, back: b};"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                            "column": 20,
+                            "line": 352
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  350 |     await page.goBack(); await expect(page).toHaveURL(/\\/about$/); await page.waitForTimeout(250);\n  351 |     const b = await page.evaluate(() => ({y: scrollY, open: (document.querySelector('details.disclosure-quotes') as HTMLDetailsElement).open, focus: document.activeElement?.tagName}));\n> 352 |     expect(b.open).toBe(true); expect(Math.abs(b.y - y0)).toBeLessThanOrEqual(TOL); expect(b.focus).not.toBe('BODY');\n      |                    ^\n  353 |     await page.goForward(); await expect(page).toHaveURL(/\\/projects$/); await page.waitForTimeout(250);\n  354 |     expect(Math.abs(await page.evaluate(() => scrollY) - 700)).toBeLessThanOrEqual(TOL);\n  355 |     timelines['CLOUD006B cross-route history'] = {y0, back: b};\n    at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:352:20"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-03T10:31:23.865Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/user/ahmedkhalawy/test-results/cloud-006/prototype-CLOUD006B-histor-5912e-osure-and-scroll-two-sided--chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                        "column": 20,
+                        "line": 352
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19b1a4b9c75f61794625-0d29327f4fce1a7c9250",
+              "file": "prototype.spec.ts",
+              "line": 341,
+              "column": 3
+            }
+          ]
+        },
+        {
+          "title": "CLOUD006B mobile navigation without app JavaScript",
+          "file": "prototype.spec.ts",
+          "line": 384,
+          "column": 6,
+          "specs": [
+            {
+              "title": "JS disabled in the browser context (390): native menu opens and a link navigates",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5160,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('details.menu')\nExpected: not \u001b[32m\"\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"not toHaveAttribute\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('details.menu')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('details.menu')\nExpected: not \u001b[32m\"\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"not toHaveAttribute\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('details.menu')\u001b[22m\n\n    at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:390:28",
+                        "location": {
+                          "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                          "column": 28,
+                          "line": 390
+                        },
+                        "snippet": "  388 |     await page.goto(baseURL + '/');\n  389 |     const menu = page.locator('details.menu');\n> 390 |     await expect(menu).not.toHaveAttribute('open', '');\n      |                            ^\n  391 |     await menu.locator('summary').click();\n  392 |     await expect(menu).toHaveAttribute('open', '');\n  393 |     await expect(page.locator('#mobile-menu a[href=\"/about\"]')).toBeVisible();"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                            "column": 28,
+                            "line": 390
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('details.menu')\nExpected: not \u001b[32m\"\"\u001b[39m\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"not toHaveAttribute\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('details.menu')\u001b[22m\n\n\n  388 |     await page.goto(baseURL + '/');\n  389 |     const menu = page.locator('details.menu');\n> 390 |     await expect(menu).not.toHaveAttribute('open', '');\n      |                            ^\n  391 |     await menu.locator('summary').click();\n  392 |     await expect(menu).toHaveAttribute('open', '');\n  393 |     await expect(page.locator('#mobile-menu a[href=\"/about\"]')).toBeVisible();\n    at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:390:28"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-03T10:31:27.540Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/user/ahmedkhalawy/test-results/cloud-006/prototype-CLOUD006B-mobile-e602a--opens-and-a-link-navigates-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                        "column": 28,
+                        "line": 390
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19b1a4b9c75f61794625-040047322b9ff61cb4de",
+              "file": "prototype.spec.ts",
+              "line": 385,
+              "column": 3
+            },
+            {
+              "title": "app bundle blocked, JS enabled (390): native menu still works by keyboard",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60033,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "/home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts",
+                            "column": 35,
+                            "line": 405
+                          },
+                          "message": "Error: locator.focus: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('details.menu').locator('summary')\u001b[22m\n\n\n  403 |     expect(await page.evaluate(() => document.documentElement.dataset.hydrated)).toBeUndefined();\n  404 |     const menu = page.locator('details.menu');\n> 405 |     await menu.locator('summary').focus(); await page.keyboard.press('Enter');\n      |                                   ^\n  406 |     await expect(menu).toHaveAttribute('open', '');\n  407 |     await page.keyboard.press('Tab');\n  408 |     await expect(page.locator(':focus')).toHaveAttribute('href', '/projects');\n    at /home/user/ahmedkhalawy/experiments/cloud-006-design/tests/prototype.spec.ts:405:35"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-03T10:31:33.742Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/user/ahmedkhalawy/test-results/cloud-006/prototype-CLOUD006B-mobile-9a5a2-enu-still-works-by-keyboard-chromium/error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19b1a4b9c75f61794625-88e3a85cf37f920a8c97",
+              "file": "prototype.spec.ts",
+              "line": 399,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-03T10:31:19.200Z",
+    "duration": 74741.637,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

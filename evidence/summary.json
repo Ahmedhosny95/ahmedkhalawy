@@ -1,0 +1,17 @@
+{
+  "task": "cloud-001", "base_commit": "88bca461d52325070350062711f5a5e12d26c996", "scope": "public-only adapter harness; not production",
+  "commands": {"install": "npm ci", "build": "npm run build", "typecheck": "npm run typecheck", "browser_tests": "npm run test:browser", "webkit_smoke": "npm run test:webkit (requires WebKit installed)", "perf_baseline": "npm run perf"},
+  "results": {
+    "npm_ci": "pass (clean node_modules)", "build": "pass", "typecheck": "pass (tsc 7.0.2, strict off)",
+    "chromium": {"passed": 70, "failed": 0, "skipped": 0},
+    "webkit": {"status": "NOT RUN", "reason": "browser download blocked by network policy (HTTP 403 for cdn.playwright.dev and playwright.download.prss.microsoft.com), 2 attempts"},
+    "axe": "serious/critical = 0 on /, /about, /projects at 390 and 1440; /contact fixture has target-size findings (unstyled static fixture), reported as annotation"
+  },
+  "defects_fixed": [
+    {"id": "D1", "kind": "accessibility", "summary": "12px index/count labels failed WCAG AA contrast (3.44-4.15:1; Home 12+4 nodes, About 4 nodes)", "fix": "public/styles/public-optimization.css color values only", "before": "evidence/logs/defects-before-fix.txt", "after": "evidence/logs/defects-after-fix.txt"},
+    {"id": "D2", "kind": "loading", "summary": "Open mobile menu / disclosures reset when React replaced the first HTML", "fix": "src/prerender-handoff.js carries details[open] state"},
+    {"id": "D3", "kind": "loading/a11y", "summary": "Keyboard focus dropped to <body> at handoff", "fix": "src/prerender-handoff.js restores focus by focusable index"}
+  ],
+  "perf": "evidence/perf-baseline.json",
+  "classification": {"source_components": ["HomePage", "AboutPage", "ProjectsPage", "shared", "LinkedInProfile", "Portrait", "public CSS", "metadata-runtime", "prerender-handoff"], "adapter_only": ["PublicLayout/Link (native anchors)", "public-adapter.css", "src/public-entry.tsx", "src/public-routes.tsx", "src/render-routes.tsx", "scripts/*"], "static_fixtures": ["/contact (fixtures/public-html/contact.html)", "/private inert noindex page", "/documents/ahmed-khalawy-cv.pdf (TEST FIXTURE)"]}
+}

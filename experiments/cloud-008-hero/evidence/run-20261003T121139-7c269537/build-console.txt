@@ -1,0 +1,2 @@
+built experiments/cloud-008-hero/dist
+exit=0

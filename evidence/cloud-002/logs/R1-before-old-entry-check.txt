@@ -1,0 +1,6 @@
+  ✘  1 [chromium] › tests/serve-cli.spec.ts:9:1 › CLI entry check works from a path containing spaces/# (119ms)
+  ✓  2 [chromium] › tests/serve-cli.spec.ts:23:1 › CLI starts its own loopback server, responds, and only that child is cleaned up (178ms)
+    Error: exited early with code 0
+    > 17 |       child.on('exit', c => {clearTimeout(t); reject(new Error('exited early with code ' + c));});
+  1 failed
+  1 passed (2.6s)
