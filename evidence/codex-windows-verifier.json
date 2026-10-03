@@ -1,0 +1,47 @@
+{
+  "observed_utc": "2026-10-03T05:30:19.328563+00:00",
+  "base_head": "0c57660d801bbf237a0d755e828c5556fba50729",
+  "patch": "tests/harness.spec.ts metadata regex permits CRLF and LF",
+  "platform": "Windows",
+  "node": "v24.18.0",
+  "verifier_exit_code": 0,
+  "typecheck_exit_code": 0,
+  "parsed_result": {
+    "stats": {
+      "startTime": "2026-10-01T14:40:19.196Z",
+      "duration": 37525.663,
+      "expected": 81,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "reportTests": 81,
+    "byFile": {
+      "defects.spec.ts": {
+        "expected": 3
+      },
+      "guard.spec.ts": {
+        "expected": 3
+      },
+      "handoff.spec.ts": {
+        "expected": 6
+      },
+      "harness.spec.ts": {
+        "expected": 67
+      },
+      "serve-cli.spec.ts": {
+        "expected": 2
+      }
+    },
+    "listedByCommand": 81,
+    "consolePassed": 81,
+    "consoleFailed": 0,
+    "agree": true
+  },
+  "tracked_evidence_docs_count": 55,
+  "changed_files": [],
+  "all_hashes_unchanged": true,
+  "browser_launched": false,
+  "full_suite_rerun": false,
+  "status": "PASS"
+}

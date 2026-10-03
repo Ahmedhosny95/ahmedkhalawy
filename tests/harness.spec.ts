@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 import {test, expect, VIEWPORTS, COMPONENT_ROUTES, ALL_ROUTES, SHOTS, noHorizontalOverflow} from './helpers';
 
 const searchData = readFileSync('src/search-data.js', 'utf8');
-const expectedMeta = (JSON.parse(searchData.match(/routes=(\{.*?\});?\nconst/s)![1]) as Record<string, any>);
+const expectedMeta = (JSON.parse(searchData.match(/routes=(\{.*?\});?\r?\nconst/s)![1]) as Record<string, any>);
 const contract = JSON.parse(readFileSync('fixtures/public-contract.json', 'utf8'));
 mkdirSync(SHOTS, {recursive: true});
 const slug = (r: string) => (r === '/' ? 'home' : r.slice(1));
