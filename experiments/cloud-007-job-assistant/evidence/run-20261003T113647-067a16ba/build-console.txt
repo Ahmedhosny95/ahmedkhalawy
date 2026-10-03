@@ -1,0 +1,2 @@
+built experiments/cloud-007-job-assistant/dist
+exit=0
